@@ -114,24 +114,30 @@ footer .signup-form {
 }
 
 /* Stackable Body Section */
-main .body-panel {
-    border-top: 1px solid white;
-    border-radius: 10px 10px 0 0;
+.body-panel {
+    position: relative;
     background-color: black;
     color: white;
     padding: 20px;
-    margin: 20px auto;
-    max-width: 900px;
     min-height: 100vh;
+    max-width: 900px;
+    z-index: 10;
 }
 
-main .body-panel .header {
+.stickyHeader {
     position: sticky;
     top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 2;
+    z-index: 11;
+    background-color: blue;
+    border-radius: 10px 10px 0 0;
+}
+
+.scrollContainer{
+    height: 10000px;
+    background-color: green;
 }
 
 /* Responsive Design */
@@ -148,9 +154,9 @@ main .body-panel .header {
         max-width: 300px;
     }
 
-    main .body-panel {
+    .body-panel {
         padding: 10px;
-        margin: 10px auto;
+        /* margin: 10px auto; */
     }
 }
 

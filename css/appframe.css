@@ -1,0 +1,57 @@
+/* Minimal CSS for app frame */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevents horizontal scrollbars */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1; /* Allows main content to fill available space */
+}
+
+/* Ensure container elements span full width */
+.container {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: silver;
+}
+
+header {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Limit max-width for section elements and center them */
+header, main, footer {
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding-left: 1rem;  
+    padding-right: 1rem; */
+    box-sizing: border-box;
+}
+
+/* On mobile, remove padding and max-width to use full screen width */
+@media (max-width: 768px) {
+    header, main, footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* Placeholder styles */
+header {
+    background-color: #f0f0f0;
+}
+
+footer {
+    background-color: #e0e0e0;
+}

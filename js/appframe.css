@@ -1,0 +1,25 @@
+/* Minimal CSS for app frame */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, main, footer {
+    flex: 1;
+}
+
+/* Placeholder styles */
+header {
+    background-color: #f0f0f0;
+}
+
+footer {
+    background-color: #e0e0e0;
+}

@@ -28,7 +28,7 @@ header {
     width: 100vw;
 }
 
-/* Limit max-width for section elements and center them */
+/* L    it max-width for section elements and center them */
 header, main, footer {
     width: 100%;
     max-width: 900px;

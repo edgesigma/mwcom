@@ -11,6 +11,7 @@ header {
     background-color: black; /* Fallback color */
 }
 #facePage{
+    position: relative;
     padding: 40px 10px;
     background-color: silver;
     color: black;
@@ -23,6 +24,11 @@ header {
     background-image: url('../img/3-Maurice.Wingfield.SethMosesMiller-SMALL-768x896.jpg');
     background-position: top;
     background-size: cover;
+}
+
+#heroContainer{
+    scroll-behavior: smooth;
+    scroll-snap-type: mandatory;
 }
 
 #spacer{
@@ -53,6 +59,7 @@ header .hero-text span{
     bottom: 10px;
     left: 10px;
     right: 10px;
+    z-index:5;
 }
 
 /* Per-character animation for hero text */
@@ -104,10 +111,46 @@ header .hero-text span {
     z-index: -1; /* Places the video behind other content */
 }
 
+
+
+
+#button-wrapper{
+    background-image: url('../img/memory-audio_cartridge_600x400.png');
+    background-position: center;
+    background-size: 80%;
+    min-height: 200px;
+    border-radius: 15px;
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+}
+#memorize-button{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+a.github-button{
+    display: block;
+    width: 100%;
+    padding: 5px;
+}
+
+#movieNightStack{
+    list-style-type: disk;  
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+#movieNightStack ul{
+    list-style-type: square;
+    margin-left: 40px;
+}
+
 /* Footer Section */
 footer {
-    background: url('path/to/perlin-noise') no-repeat center center;
-    background-size: cover;
+    position: relative;
     padding: 20px;
 }
 
@@ -115,6 +158,15 @@ footer .signup-form {
     max-width: 400px;
     margin: 0 auto;
     text-align: center;
+}
+
+#grid{
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:0;
 }
 
 /* Stackable Body Section */
@@ -129,6 +181,7 @@ footer .signup-form {
 }
 
 .scrollContainer{
+    position: relative;
     height: 100vh;
     width: 100vw;
     background-color: #343a34;

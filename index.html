@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
+
     <div class="container" id="heroContainer">
       <header>
         <div id="hero">
@@ -37,9 +38,9 @@
     </div>
 
     <div class="container sticky scrollContainer">
-      <div class="">
+      <div class="relative project">
         <div
-          class="sticky top-0 flex flex-row justify-stretch bg-gray-50/90 px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-gray-900/10 backdrop-blur-sm dark:bg-gray-700/90 dark:text-gray-200 dark:ring-black/10 text-xl"
+          class="projectHeader sticky top-0 flex flex-row justify-stretch bg-gray-50/90 px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-gray-900/10 backdrop-blur-sm dark:bg-gray-700/90 dark:text-gray-200 dark:ring-black/10 text-xl"
         >
           <div class="grow">memory.audio</div>
           <div class="grow text-right">web app</div>
@@ -47,10 +48,16 @@
         </div>
         <div class="divide-y divide-gray-200 dark:divide-gray-200/5">
           <div
-            class="grid grid-flow-col grid-rows-3 p-4 pt-8 auto-rows-min"
+            class="grid grid-flow-col grid-rows-3 p-4 pt-8 auto-rows-min gap-4 h-fit"
             id="project1"
           >
             <div class="col-span-2">
+
+              <!-- <div id="button-wrapper"></div> -->
+              <img src="../img/memory-audio_cartridge_B.png" id="memoryAudio-banner" />
+              <button name="memorize-button" id="memorize-button" class="px-4 py-2 bg-pink-500 text-white rounded hover:bg-blue-700 transition" />Learn Anything</button>
+
+
               <p class="mb-4">
                 <a href="http://memory.audio">memory.audio</a> -- bite-sized
                 audio lessons on demand.
@@ -60,15 +67,13 @@
                 moderation and inference. The functionality is composed as a
                 chain of prompts; each transforming the user input.
               </p>
-              <div id="button-wrapper"></div>
-
-              <button name="memorize-button" id="memorize-button" class="px-4 py-2 bg-pink-500 text-white rounded hover:bg-blue-700 transition" />Learn Anything</button>
+              
               
             </div>
 
             <img src="img/prompt_chain_diagram.svg" class="row-span-2" />
 
-            <div class="row-span-2">
+            <div class="row-span-2 h-fit">
               <p class="mb-4">
                 First, users submit a learning goal as a text prompt. User input
                 is cleaned then validated using openAI's moderation API.
@@ -91,12 +96,12 @@
                 and generates audio.
               </p>
             </div>
-          </div>
+          <!-- </div> -->
         </div>
       </div>
-      <div class="relative">
+      <div class="relative project">
         <div
-          class="sticky top-0 flex flex-row justify-stretch bg-gray-50/90 px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-gray-900/10 backdrop-blur-sm dark:bg-gray-700/90 dark:text-gray-200 dark:ring-black/10 text-xl"
+          class="projectHeader sticky top-0 flex flex-row justify-stretch bg-gray-50/90 px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-gray-900/10 backdrop-blur-sm dark:bg-gray-700/90 dark:text-gray-200 dark:ring-black/10 text-xl"
         >
           <div class="grow">Movie Night</div>
           <div class="grow text-right">public repo</div>
@@ -152,9 +157,9 @@
           <img src="img/feature_visualization_7.png" />
         </div>
       </div>
-      <div class="relative">
+      <div class="relative project">
         <div
-          class="sticky top-0 flex flex-row justify-stretch bg-gray-50/90 px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-gray-900/10 backdrop-blur-sm dark:bg-gray-700/90 dark:text-gray-200 dark:ring-black/10 text-xl"
+          class="projectHeader sticky top-0 flex flex-row justify-stretch bg-gray-50/90 px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-gray-900/10 backdrop-blur-sm dark:bg-gray-700/90 dark:text-gray-200 dark:ring-black/10 text-xl"
         >
           <div class="grow">Digital Garage + 934 Gallery</div>
           <div class="grow text-right">art</div>
@@ -173,41 +178,62 @@
             </p>
           </div>
 
-          <p class="mb-8">
-            In 2023, I joined the board of 934 Gallery and helped to increase
-            the capabilities of the gallery space to show interactive and
+            <p class="mb-8">
+            In 2023, I joined the board of <a href="https://934gallery.org/" target="_blank">934 Gallery</a> and helped to <a href="https://citypulsecolumbus.com/maurice-wingfield-curates-digital-first-gallery/" target="_blank">increase the capabilities</a> of the gallery space for showing interactive and
             digital art.
           </p>
+
+          <video
+            id="player"
+            class="w-full h-auto"
+            autoplay
+            loop
+            muted
+            playsinline
+            src="img/vid/0001-0406.mp4"
+          ></video>
+          <div id="video-caption">Untitled: In the Digital Garage east room, visitors enter a cold dark space. The vision system tracks the movement of their right hand only.</div>
 
           <div id="gallery-carousel-1" class="">
             <img
               class=""
-              src="img/3-Maurice.Wingfield.SethMosesMiller-SMALL-768x896.jpg"
+              src="img/vid/blood-swirl.png"
+              data-video="img/vid/0001-0406.mp4"
+              data-caption="Untitled: In the Digital Garage east room, visitors enter a cold dark space. The vision system tracks the movement of their right hand only."
+            />
+            <img
+              class=""
+              src="img/vid/air-pixels.png"
+              data-video="img/vid/2400C9CA-20F2-4242-AE45-A0A1C41D52DA.MOV"
+              data-caption="Untitled: Rear projected onto the front windows of the main gallery. Video collage."
+            />
+            <img
+              class=""
+              src="img/vid/ocean.png"
+              data-video="img/vid/ocean_of_eyes_A.mp4"
+              data-caption="Ocean of Eyes: In the west room of the Digital Garage. Hand-made LED panel installation."
+            />
+            <img
+              class=""
+              src="img/vid/wip-panels.png"
+              data-video="img/vid/IMG_0797.MOV"
+              data-caption="Behind the scenes. First day these panels showed video."
             />
             <img
               class=""
               src="img/3-Maurice.Wingfield.SethMosesMiller-SMALL-768x896.jpg"
-            />
-            <img
-              class=""
-              src="img/3-Maurice.Wingfield.SethMosesMiller-SMALL-768x896.jpg"
-            />
-            <img
-              class=""
-              src="img/3-Maurice.Wingfield.SethMosesMiller-SMALL-768x896.jpg"
+              data-video="img/vid/0000000001.MOV"
+              data-caption="Work in progress: First stitched video projection on the front windows after application of projection film."
             />
           </div>
 
-          <p>This is another paragraph.</p>
+          <p>With a grant from the Columbus Arts Council, we extended the Digital Garage initiative to develop a summer youth program for Columbus schools students.</p>
         </div>
       </div>
-      <!-- </div> -->
-    </div>
-
-    <div class="container" id="footerContainer">
-      <footer>
+      
+      <div id="formContainer">
         <form class="signup-form">
-          <label for="email">Sign up for updates:</label>
+          <label for="email">Launching an email by end of year.</label>
           <input
             type="email"
             id="email"
@@ -215,15 +241,18 @@
             placeholder="Enter your email"
           />
           <button type="submit">Subscribe</button>
+          
         </form>
-        <canvas id="grid" width="500" height="500"></canvas>
-          <span id="moves"></span>
-      </footer>
+        <canvas id="grid" width="375" height="200"></canvas>
+      </div>
+
     </div>
-    <script src="js/scroll-proxy.js"></script>
+
+    <!-- <script src="js/scroll-proxy.js"></script> -->
     <script src="js/header-scroll-animate.js"></script>
     <script src="js/langtons_ant.js"></script>
-    
+    <script src="js/video-switcher.js"></script>
+
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
   </body>

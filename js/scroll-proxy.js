@@ -34,19 +34,23 @@ document.addEventListener('DOMContentLoaded', function () {
   // Watch scroll to lock/unlock page scroll
   function checkScrollLock() {
     const rect = scrollContainer.getBoundingClientRect();
-    if (shouldProxyScroll()) {
+    const footer = document.querySelector('footer');
+    const footerRect = footer ? footer.getBoundingClientRect() : { top: 0, bottom: 0 };
+
+    // Only lock scroll if .scrollContainer is fully in the viewport
+    // AND the footer is NOT visible at all
+    if (
+      rect.top >= 0 &&
+      rect.bottom <= window.innerHeight &&
+      (!footer || footerRect.top >= window.innerHeight)
+    ) {
       if (!scrollLockActive) {
-        console.log('[scroll-proxy] .scrollContainer reached top of viewport, locking page scroll');
+        console.log('[scroll-proxy] .scrollContainer fully in viewport and footer not visible, locking page scroll');
       }
       lockPageScroll();
-      // Snap .scrollContainer to top if it goes above
-      if (rect.top < 0) {
-        window.scrollBy(0, rect.top);
-        console.log('[scroll-proxy] Snapping .scrollContainer to top of viewport');
-      }
     } else {
       if (scrollLockActive) {
-        console.log('[scroll-proxy] .scrollContainer left top of viewport, unlocking page scroll');
+        console.log('[scroll-proxy] .scrollContainer not fully in viewport or footer visible, unlocking page scroll');
       }
       unlockPageScroll();
     }

@@ -10,6 +10,18 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    scroll-snap-type: y mandatory;
+}
+
+a{
+    text-decoration: underline;
+}
+a:hover{
+    color: yellow;
+}
+
+.container{
+    scroll-snap-align: start;
 }
 
 main {

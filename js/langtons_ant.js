@@ -1,8 +1,8 @@
 
 // Set cell size in pixels
-const CELL_SIZE = 10;
+const CELL_SIZE = 5;
 // Set grid colors
-const COLOR_ALIVE = '#000000ff'; // dark cell color
+const COLOR_ALIVE = '#333333ff'; // dark cell color
 const COLOR_DEAD = '#312d2aff';  // light cell color
 let canvas, ctx;
 window.onload = function() {

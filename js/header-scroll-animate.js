@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     header.style.transform = `perspective(800px) rotateX(${rotate}deg) translateY(${translateY}px)`;
     header.style.transformStyle = 'preserve-3d';
     header.style.filter = `blur(${maxBlur * progress}px)`;
+    header.style.opacity = `${1 - progress}`;
   }
 
   window.addEventListener('scroll', animateHeader, { passive: true });

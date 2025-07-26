@@ -2,7 +2,7 @@
 // Set cell size in pixels
 const CELL_SIZE = 5;
 // Set grid colors
-const COLOR_ALIVE = '#333333ff'; // dark cell color
+const COLOR_ALIVE = '#161515ff'; // dark cell color
 const COLOR_DEAD = '#312d2aff';  // light cell color
 let canvas, ctx;
 window.onload = function() {
@@ -16,7 +16,7 @@ window.onload = function() {
   // Clear canvas
   ctx.fillStyle = COLOR_DEAD;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  setInterval(moveAnt, 1000/13, grid);
+  setInterval(moveAnt, 1000/8, grid);
 }
 
 const ANTUP = 0;
@@ -73,6 +73,7 @@ class Grid {
   height = 0;
   width = 0;
   moves = 0;
+  resetThreshold = 25000; // Number of steps before reset
 
   constructor(width, height) {
     this.width = width;
@@ -90,6 +91,10 @@ class Grid {
     this.ant = new Ant();
     this.ant.x = Math.floor(this.width / 2);
     this.ant.y = Math.floor(this.height / 2);
+    this.moves = 0;
+    // Clear canvas
+    ctx.fillStyle = COLOR_DEAD;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
 
   move () {
@@ -113,6 +118,11 @@ class Grid {
       ctx.fillStyle = 'red';
       ctx.fillRect(this.ant.x * CELL_SIZE, this.ant.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
       this.moves++;
+      // Reset after threshold
+      if (this.moves >= this.resetThreshold) {
+        this.init();
+        break;
+      }
     }
   }
 }

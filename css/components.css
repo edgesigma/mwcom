@@ -10,10 +10,12 @@ header {
     color: white;
     background-color: black; /* Fallback color */
 }
+
+
 #facePage{
     position: relative;
     padding: 40px 10px;
-    background-color: black;
+    background-color: #4f5c60;
     color: silver;
     flex: 1;
 }
@@ -28,7 +30,7 @@ header {
 
 #heroContainer{
     scroll-behavior: smooth;
-    scroll-snap-type: mandatory;
+    scroll-snap-type: proximity;
 }
 
 #spacer{
@@ -37,13 +39,13 @@ header {
 
 header .hero-text {
     display: inline-block;
-    background-color: black;
+    /* background-color: black; */
     color: silver;
     font-size: 2rem;
     text-align: left;
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
-    left: 0;
+    left: 0; */
     padding: 10px;
 }
 
@@ -60,6 +62,10 @@ header .hero-text span{
     left: 10px;
     right: 10px;
     z-index:5;
+}
+
+.project{
+  color: #35432c;
 }
 
 .projectHeader{
@@ -119,6 +125,7 @@ header .hero-text span {
 
 #memoryAudio-banner{
     border-radius: 15px;
+    width: 100%;
 }
 
 #button-wrapper{
@@ -133,8 +140,12 @@ header .hero-text span {
     position: relative;
 }
 #memorize-button{
+    background-color: #eff84a;
+    color: gray;
+    font-weight: bold;
+    text-transform: uppercase;
     display: block;
-    width: 100%;
+    width: 50%;
     margin: 10px auto;
     margin-bottom: 40px;
 }
@@ -186,12 +197,16 @@ footer .signup-form {
     text-align: center;
 }
 
+footer .signup-form input{
+    width: 100%;
+}
+
 #formContainer{
     background-color: #464639;
     position: relative;
     height: 100vh;
     width: 100vw;
-    padding: 20px;
+    /* padding: 20px; */
     z-index: 11;
 }
 
@@ -217,7 +232,8 @@ footer .signup-form {
 
 #grid{
     position: absolute;
-    /* top:0; */
+    height: 100vh;
+    width: 100vw;
     right:0;
     bottom:0;
     left:0;
@@ -231,7 +247,7 @@ footer .signup-form {
     color: white;
     padding: 20px;
     min-height: 100vh;
-    max-width: 900px;
+    /* max-width: 900px; */
     z-index: 10;
 }
 
@@ -247,6 +263,14 @@ footer .signup-form {
 }
 
 /* Responsive Design */
+@media (min-width: 800px) {
+    header {
+        flex-direction: row;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     header {
         min-height: 40vh; /* Adjust height for smaller screens */

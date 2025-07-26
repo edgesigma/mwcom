@@ -20,7 +20,7 @@ a:hover{
     color: yellow;
 }
 
-.container{
+.pageContainer{
     scroll-snap-align: start;
 }
 
@@ -29,7 +29,7 @@ main {
 }
 
 /* Ensure container elements span full width */
-.container {
+.pageContainer {
     width: 100%;
     box-sizing: border-box;
     background-color: silver;

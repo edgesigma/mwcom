@@ -9,25 +9,25 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
+  <body class="md:text-xl lg:text-2xl">
 
     <div class="pageContainer" id="heropageContainer">
       <header class="">
         <div id="hero">&nbsp;</div>
         <div id="facePage" class="">
           <div class="hero-text"><span>Maurice Wingfield</span></div>
-          <p>
+          <p class="">
             Full stack web developer. Passionate supporter of public art. AI enthusiast. I love figuring things out. What problems do you need solved?
           </p>
           <div id="linkSection" class="flex flex-row justify-stretch">
             <div class="flex-1 justify-center items-center">
-              <a href="mailto:yell@mauricewingfield.com">email</a>
+              <a href="mailto:yell@mauricewingfield.com" target="_blank">email</a>
             </div>
             <div class="flex-1 justify-center items-center">
               <a href="https://x.com/noslugg">X.com</a>
             </div>
             <div class="flex-1 justify-center items-center">
-              <a href="https://github.com/edgesigma">github</a>
+              <a href="https://github.com/edgesigma" target="_blank">github</a>
             </div>
           </div>
           
@@ -40,16 +40,16 @@
         <div
           class="projectHeader sticky top-0 flex flex-row justify-stretch px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-gray-900/10 backdrop-blur-sm dark:bg-gray-700/90 dark:text-gray-200 dark:ring-black/10 text-xl"
         >
-          <div class="grow">Digital Garage + 934 Gallery</div>
+          <div class="grow"><h2>Digital Garage + 934 Gallery</h2></div>
           <div class="grow text-right">art</div>
         </div>
         <div
-          class="p-4 pt-8 md:flex md:flex-row md:gap-4 md:flex-wrap"
+          class="p-4 pt-16 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-16 md:p-16"
           id="project3"
         >
-          <div class="flex flex-row gap-4 justify-stretch mb-8">
+          <div class="flex flex-row gap-4 justify-stretch md:col-span-2 md:max-h-30">
             <div class="basis-1/3">
-              <img src="img/934_gallery_logo_white.png" />
+              <img src="img/934_gallery_logo_white.png" class="md:h-full"/>
             </div>
             <p class="basis-2/3 text-right">
               934 Cleveland Ave.<br />
@@ -57,7 +57,9 @@
             </p>
           </div>
 
-            <p class="mb-8">
+            
+<div>
+  <p class="mb-8">
             In 2023, I joined the board of <a href="https://934gallery.org/" target="_blank">934 Gallery</a> and helped to <a href="https://citypulsecolumbus.com/maurice-wingfield-curates-digital-first-gallery/" target="_blank">increase the capabilities</a> of the gallery space for showing interactive and
             digital art.
           </p>
@@ -105,7 +107,8 @@
               data-caption="Work in progress: First stitched video projection on the front windows after application of projection film."
             />
           </div>
-
+</div>
+<div>
           <p>With a grant from the Columbus Arts Council, we extended the Digital Garage initiative to develop a summer youth program for Columbus schools students.</p>
 
           <p>ColuIt was important to me that at the end of the program, students got to take the equipment home. </p>
@@ -116,7 +119,7 @@
             src="img/vid/0001-5376.mp4"
             controls
           ></video>
-
+</div>
         </div>
       </div>
       
@@ -124,19 +127,19 @@
         <div
           class="projectHeader sticky top-0 flex flex-row justify-stretch px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-gray-900/10 backdrop-blur-sm dark:bg-gray-700/90 dark:text-gray-200 dark:ring-black/10 text-xl"
         >
-          <div class="grow">memory.audio</div>
+          <div class="grow"><h2>memory.audio</h2></div>
           <div class="grow text-right">web app</div>
           
         </div>
         <div class="">
           <div
-            class="grid grid-flow-col grid-rows-2 p-4 pt-8 auto-rows-min gap-4 h-fit"
+            class="justify-items-center p-4 pt-16 grid grid-cols-1 md:grid-cols-4 md:gap-16 md:p-16 h-fit"
             id="project1"
           >
-            <div class="col-span-2 h-fit">
+            <div class="col-span-2 h-fit md:col-span-1">
 
               <!-- <div id="button-wrapper"></div> -->
-              <img src="../img/memory-audio_cartridge_B.png" id="memoryAudio-banner" />
+              <img src="../img/memory-audio_cartridge_C.png" id="memoryAudio-banner" />
               <button name="memorize-button" id="memorize-button" class="px-4 py-2 rounded hover:bg-blue-700 transition" />Learn Anything</button>
 
 
@@ -147,14 +150,12 @@
               <p class="">
                 The app is technically, an LLM wrapper; leveraging openAI's developer API for moderation and inference. The functionality is composed as a chain of prompts; each transforming the user input in a process that results in a final asset.
               </p>
-              <p>Plans for this product have always been more comprehensive than simply a single feature. In the next iteration of the idea, I plan to buid a comprehensive lesson planning module. Currently, learning goals are validated for a sufficently narrow scope that the requested goal can be satisfied by a single audio lesson. As I used the app, I was generating audio lessons before a shift that were related to areas I wanted to learn more about and meditate on.</p>
-              
-              
             </div>
 
             <img src="img/prompt_chain_diagram.svg" class="" />
 
-            <div class="h-fit">
+            <div class="h-fit md:col-span-2">
+              <h3>How It Works</h3>
               <p class="mb-4">
                 First, users submit a learning goal as a text prompt. User input
                 is cleaned then validated using openAI's moderation API.
@@ -176,8 +177,9 @@
                 Finally, Google Cloud Platform STT takes the augmented script
                 and generates audio.
               </p>
+              <h3>stuff goes here</h3>
+              <p>Plans for this product have always been more comprehensive than simply a single feature. In the next iteration of the idea, I plan to buid a comprehensive lesson planning module. Currently, learning goals are validated for a sufficently narrow scope that the requested goal can be satisfied by a single audio lesson. As I used the app, I was generating audio lessons before a shift that were related to areas I wanted to learn more about and meditate on.</p>
             </div>
-          <!-- </div> -->
         </div>
       </div>
       </div>
@@ -185,14 +187,15 @@
         <div
           class="projectHeader sticky top-0 flex flex-row justify-stretch px-4 py-3 text-sm font-semibold text-gray-900 ring-1 ring-gray-900/10 backdrop-blur-sm dark:bg-gray-700/90 dark:text-gray-200 dark:ring-black/10 text-xl"
         >
-          <div class="grow">Movie Night</div>
+          <div class="grow"><h2>Movie Night</h2></div>
           <div class="grow text-right">public repo</div>
         </div>
         <div
-          class="p-4 pt-8"
+          class="p-4 pt-16 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-16 md:p-16"
           id="project2"
         >
 
+        <div>
           <img src="img/feature_visualization_7.png" />
 
           <p class="mb-4">
@@ -209,7 +212,8 @@
             style="width: 100%; padding: 5px;"
             >Watch</a
           >
-
+</div>
+<div>
           <p class="mb-4">
             The app began as an entry into the Grow With X 24hr AI hackathon in
             July 2025. It has become a clasroom for me; giving me real world
@@ -225,7 +229,7 @@
             indication that what you want is to actually live in the world
             created by the filmmaker.
           </p>
-
+</div>
           <ul id="movieNightStack">
             <li>Kaggle dataset: MovieLens 25M</li>
             <li>
@@ -244,7 +248,7 @@
       
       <div id="formContainer">
         <span id="moves"></span>
-        <canvas id="grid" width="200" height="420"></canvas>
+        <canvas id="grid" width="" height=""></canvas>
       </div>
 
     </div>

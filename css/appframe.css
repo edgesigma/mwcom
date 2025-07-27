@@ -20,6 +20,14 @@ a:hover{
     color: yellow;
 }
 
+h2{
+    font-weight: bold;
+}
+h3{
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 .pageContainer{
     scroll-snap-align: start;
 }

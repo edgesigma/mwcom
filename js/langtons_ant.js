@@ -1,6 +1,6 @@
 
 // Set cell size in pixels
-const CELL_SIZE = 5;
+const CELL_SIZE = 2;
 // Set grid colors
 const COLOR_ALIVE = '#161515ff'; // dark cell color
 const COLOR_DEAD = '#312d2aff';  // light cell color

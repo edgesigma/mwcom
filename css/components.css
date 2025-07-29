@@ -15,7 +15,7 @@ header {
 #facePage{
     position: relative;
     padding: 40px 10px;
-    background-color: #4f5c60;
+    background-color: #3f3f33;
     color: silver;
     flex: 1;
     font-size: 1.4rem;
@@ -67,7 +67,7 @@ header .hero-text span{
 }
 
 #linkSection{
-    background-color: #475255;
+    background-color: #323229;
     padding: 30px;
     border-radius: 15px;
     position: absolute;
@@ -78,12 +78,12 @@ header .hero-text span{
 }
 
 .project{
-  color: #35432c;
+  color: #163130;
 }
 
 .projectHeader{
     z-index: 10;
-    background-color: black;
+    background-color: #1e4241;
     font-size: 2rem;
 }
 
@@ -294,7 +294,8 @@ footer .signup-form input{
     position: relative;
     height: 100vh;
     width: 100vw;
-    background-color: #739175;
+    /* background-color: #739175; */
+    background-color: #377e7b;
     z-index: 20;
     margin-top: 100vh;
     overflow-y: scroll;

@@ -27,7 +27,7 @@ header {
     }
     #facePage p{
         width: 60%;
-        margin: 0 auto;
+        margin: 50px auto;
     }
 }
 
@@ -144,7 +144,7 @@ header .hero-text span {
 
 
 #memoryAudio-banner{
-    border-radius: 15px;
+    border-radius: 10px;
     width: 100%;
 }
 
@@ -160,6 +160,8 @@ header .hero-text span {
     position: relative;
 }
 #memorize-button{
+    text-decoration: none;
+    text-align: center;
     background-color: #eff84a;
     color: gray;
     font-weight: bold;
@@ -168,6 +170,12 @@ header .hero-text span {
     /* width: 50%;   */
     margin: 10px auto;
     margin-bottom: 40px;
+}
+
+#transition-steps{
+    list-style-type: disc;
+    margin-left: 40px;
+    width: 80%;
 }
 
 a.github-button{
@@ -195,12 +203,17 @@ video#player{
     border-radius: 10px;
 }
 
-div#video-caption{
+#video-caption, .image-caption{
     margin: 20px 0;
     font-size: .7rem;
     color: black;
 }
 
+@media (min-width: 600px){
+    #video-caption, .image-caption{
+        font-size: 1rem;
+    }
+}
 
 /* Footer Section */
 

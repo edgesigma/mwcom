@@ -11,6 +11,7 @@ const heroImages = [
   'img/pfp/284422572_979283019429137_2755411786017774232_n.jpeg',
   'img/pfp/46465186_369010213661394_6295429840230107647_n.jpg',
   'img/pfp/47582619_353538988797700_164052074848211876_n.jpg',
+  'img/pfp/OoE_close.png',
 ];
 
 document.addEventListener('DOMContentLoaded', function () {

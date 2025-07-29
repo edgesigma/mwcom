@@ -18,8 +18,7 @@
           <!-- <div class="hero-text"><span>Maurice Wingfield</span></div> -->
           <p class="">
             Maurice Wingfield<br /><br />
-            <a href="#fullStackDev">Full stack web developer</a>. Passionate supporter of <a href="#publicArt">public art</a>. <a href="#aiEnthusiast">AI enthusiast</a>. I love figuring things out. What problems do you need solved?
-          </p>
+            <a href="#fullStackDev">Full stack web developer</a>. Passionate supporter of <a href="#publicArt">public art</a>. <a href="#aiEnthusiast">AI enthusiast</a>. I love figuring things out.</p>
           <div id="linkSection" class="flex flex-row justify-center">
 
             <div class="flex gap-5 items-center justify-center">
@@ -271,26 +270,7 @@
             style="width: 100%; padding: 5px;"
             >Watch</a
           >
-</div>
-<div>
-          <p class="mb-4">
-            The app began as an entry into the Grow With X 24hr AI hackathon in
-            July 2025. It has become a classroom for me; giving me real world
-            understanding of some basic ML concepts.
-          </p>
-
-          <p class="mb-4">
-            The theme of the hackathon was movies. At the time, I had spent
-            months thinking about and building SaaS applications, so this theme
-            really challenged my creativity. I settled on the concept of being
-            immersed in the world of a film. A film you could watch again and
-            again even playing in the background while you work; it's an
-            indication that what you want is to actually live in the world
-            created by the filmmaker.
-          </p>
-</div>
-<div>
-          <ul id="movieNightStack">
+<ul id="movieNightStack" class="pt-4">
             <li>Kaggle dataset: MovieLens 25M</li>
             <li>
               Feature extraction pipeline:
@@ -302,8 +282,32 @@
             <li>Vector embedding: FAISS</li>
             <li>Search: FAISS index</li>
           </ul>
+          
+</div>
+<div>
+  <p class="mb-4">
+            The app began as an entry into the Grow With X 24hr AI hackathon in
+            July 2025. It has become a classroom for me; giving me real world
+            understanding of some basic ML concepts.
+          </p>
+          <p class="mb-4">
+            The theme of the hackathon was movies. At the time, I had spent
+            months thinking about and building SaaS applications, so this theme
+            really challenged my creativity. I settled on the concept of being
+            immersed in the world of a film. A film you could watch again and
+            again even playing in the background while you work; it's an
+            indication that what you want is to actually live in the world
+            created by the filmmaker.
+          </p>
+          <p>Matching webcam images to the posters would require representing each poster as a vector of numbers. When the user sends a webcam frame to the server, it is converted into a vector in the same way. Then we need a way to compare the user supplied image with all of the movie poster vectors and return the closest match.</p>
+          
+</div>
+<div>
+  <p>When we turn each poster into a vector, we end up with a high dimensional space. Just like plotting a point in three dimensions (x, y & z), we can plot points in a space with around 66 dimensions. If done correctly, points that are closer together have a higher similarity. The following image is a tSNE diagram (t-distributed Stochastic Neighbor Embedding). It's a way to take the plots we do in our 66 dimensional space and reducing that down to only 2 dimensions while preserving the similarity of points closer together.</p>
 
-          <img src="img/feature_visualization_7.png" class="rounded-md" />
+          <img src="img/feature_visualization_7.png" class="rounded-md pt-8" />
+
+          
 </div>
         </div>
       </div>

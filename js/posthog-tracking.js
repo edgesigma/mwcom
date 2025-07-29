@@ -1,9 +1,12 @@
 // PostHog tracking for mwcom portfolio
-// Replace 'YOUR_POSTHOG_KEY' and 'YOUR_POSTHOG_HOST' with your actual PostHog project values
 (function(){
   // Load PostHog
   (function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var c=e;for(void 0!==a?c=e[a]=[]:a="posthog",c.people=c.people||[],c.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},c.people.toString=function(){return c.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once reset group add_group remove_group track_pageview register unregister get_distinct_id get_property get_feature_flag onFeatureFlags reloadFeatureFlags isFeatureEnabled onFeatureFlag".split(" "),n=0;n<o.length;n++)g(c,o[n]);e._i.push([i,s,a])},e.__SV=1)})(document,window.posthog||[]);
-  posthog.init('YOUR_POSTHOG_KEY', {api_host: 'YOUR_POSTHOG_HOST'});
+  posthog.init('phc_a94fsl13aOmdJkNocQWfiMvzZjmqhbssuCnDh56PN4u', {api_host: 'https://app.posthog.com'});
+
+  // Set environment property for all events
+  var env = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'development' : 'production';
+  posthog.register({ env: env });
 
   // Track video switcher events
   document.addEventListener('DOMContentLoaded', function() {

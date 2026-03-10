@@ -21,6 +21,10 @@
 }
 
 html {
+  overflow-x: hidden;
+}
+
+html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
 }
@@ -52,14 +56,13 @@ ul { list-style: none; }
 
 /* ==================== HERO ==================== */
 #hero {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
 .hero-photo {
-  flex: 0 0 45%;
+  height: 250px;
   background-size: cover;
   background-position: center top;
   background-color: #1a1a1a;
@@ -131,6 +134,7 @@ ul { list-style: none; }
 }
 
 .scroll-indicator {
+  display: none;
   position: absolute;
   bottom: 1.5rem;
   left: 50%;
@@ -160,7 +164,6 @@ main {
 
 .project {
   margin-top: var(--section-gap);
-  padding-left: 1.5rem;
 }
 
 .project-header {
@@ -196,6 +199,14 @@ main {
 }
 .project-grid.two-col {
   grid-template-columns: 1fr;
+}
+.project-grid.single-col {
+  grid-template-columns: 1fr;
+}
+.project-grid.single-col .project-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .project-text p {
@@ -254,6 +265,11 @@ main {
   background: var(--accent-hover);
   color: var(--bg);
 }
+.project-link.disabled {
+  background: var(--border);
+  color: var(--text-muted);
+  cursor: default;
+}
 
 /* Project media */
 .project-media { margin-top: 1rem; }
@@ -268,6 +284,7 @@ main {
 .carousel-wrapper {
   position: relative;
   margin-top: 1rem;
+  overflow: hidden;
 }
 
 .carousel-wrapper .carousel-arrow {
@@ -350,6 +367,24 @@ main {
   fill: white;
 }
 
+.thumb-video {
+  height: 100px;
+  width: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s, border-color 0.2s;
+  border: 2px solid transparent;
+  pointer-events: none;
+}
+.thumb-video:hover {
+  opacity: 0.8;
+}
+.thumb-video.active {
+  opacity: 1;
+  border-color: var(--accent);
+}
+
 .gallery-photos {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -369,22 +404,29 @@ main {
   border: 1px solid var(--border);
 }
 
+#apophis-widget {
+  width: 100%;
+  max-width: 600px;
+  min-height: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+#apophis-widget iframe {
+  width: 100% !important;
+  height: 400px !important;
+  max-width: 100% !important;
+}
+
 /* ==================== ABOUT ==================== */
 #about {
   margin-top: var(--section-gap);
-  max-width: var(--max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1.5rem;
 }
 
 /* ==================== PROJECTS ==================== */
 #projects {
   margin-top: var(--section-gap);
-  max-width: var(--max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1.5rem;
 }
 #projects .section-inner h2 {
   margin-bottom: 0;
@@ -394,8 +436,10 @@ main {
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.02em;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1.25rem;
+  background: var(--text);
+  color: var(--bg);
+  border-radius: 6px;
   margin-bottom: 2rem;
 }
 
@@ -411,10 +455,6 @@ main {
 /* ==================== TECHNOLOGIES ==================== */
 #technologies {
   margin-top: var(--section-gap);
-  max-width: var(--max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1.5rem;
 }
 
 .tech-agents {
@@ -516,8 +556,9 @@ footer {
 
 .contact-links {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
 }
 
 .contact-links a {
@@ -555,7 +596,11 @@ footer {
     min-height: 100vh;
   }
   .hero-photo {
+    height: auto;
     flex: 0 0 40%;
+  }
+  .scroll-indicator {
+    display: block;
   }
   .hero-content {
     padding: 4rem 3rem;
@@ -566,7 +611,8 @@ footer {
   }
 
   .gallery-carousel img,
-  .thumb-item img {
+  .thumb-item img,
+  .thumb-video {
     height: 130px;
   }
 
@@ -575,7 +621,6 @@ footer {
   }
 
   .contact-links {
-    flex-direction: row;
     gap: 2rem;
   }
 }

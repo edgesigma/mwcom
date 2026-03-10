@@ -87,7 +87,7 @@
         <span class="project-type">Android App</span>
       </div>
       <div class="project-body">
-        <div class="project-grid">
+        <div class="project-grid two-col">
           <div class="project-text">
             <p class="project-problem"><strong>Problem:</strong> Research shows fidgeting can improve attention by 15-20%, but most phone use during focus time is counterproductive.</p>
             <p><strong>What I built:</strong> An Android app that channels the impulse to pick up your phone into a controlled, non-distracting interaction — working with human behavior instead of against it.</p>
@@ -99,6 +99,61 @@
               <span>Product Design</span>
             </div>
             <a href="https://fidgetfeed.com" target="_blank" rel="noopener" class="project-link">Visit Fidget Feed</a>
+          </div>
+          <div class="project-media">
+            <video id="fidget-player" autoplay loop muted playsinline
+              src="/fidget-video/clicky-wheel-cropped-captioned.mp4">
+            </video>
+            <p class="media-caption" id="fidget-caption">Clicky Wheel — a satisfying rotary fidget with haptic clicks.</p>
+
+            <div class="carousel-wrapper">
+              <button class="carousel-arrow left" aria-label="Scroll left">&#8249;</button>
+              <div class="gallery-carousel" id="fidget-carousel">
+                <div class="thumb-item active-thumb">
+                  <video src="/fidget-video/clicky-wheel-cropped-captioned.mp4" muted loop class="thumb-video active"
+                    data-video="/fidget-video/clicky-wheel-cropped-captioned.mp4"
+                    data-caption="Clicky Wheel — a satisfying rotary fidget with haptic clicks."></video>
+                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
+                </div>
+                <div class="thumb-item">
+                  <video src="/fidget-video/dial-block-cropped.mp4" muted loop class="thumb-video"
+                    data-video="/fidget-video/dial-block-cropped.mp4"
+                    data-caption="Dial Block — rotary dial interaction with resistance feedback."></video>
+                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
+                </div>
+                <div class="thumb-item">
+                  <video src="/fidget-video/magnetic-tile-cropped.mp4" muted loop class="thumb-video"
+                    data-video="/fidget-video/magnetic-tile-cropped.mp4"
+                    data-caption="Magnetic Tile — snap-to-grid tile sliding."></video>
+                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
+                </div>
+                <div class="thumb-item">
+                  <video src="/fidget-video/some-chords-cropped.mp4" muted loop class="thumb-video"
+                    data-video="/fidget-video/some-chords-cropped.mp4"
+                    data-caption="Some Chords — strum guitar chords with a swipe."></video>
+                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
+                </div>
+                <div class="thumb-item">
+                  <video src="/fidget-video/tap-typing-cropped.mp4" muted loop class="thumb-video"
+                    data-video="/fidget-video/tap-typing-cropped.mp4"
+                    data-caption="Tap Typing — typewriter-style key tapping."></video>
+                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
+                </div>
+                <div class="thumb-item">
+                  <video src="/fidget-video/trapped-bead-cropped.mp4" muted loop class="thumb-video"
+                    data-video="/fidget-video/trapped-bead-cropped.mp4"
+                    data-caption="Trapped Bead — guide a bead through a maze by tilting."></video>
+                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
+                </div>
+                <div class="thumb-item">
+                  <video src="/fidget-video/bubble_preview/bubble-combined.mp4" muted loop class="thumb-video"
+                    data-video="/fidget-video/bubble_preview/bubble-combined.mp4"
+                    data-caption="Bubble Pop — tap to pop satisfying bubbles."></video>
+                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
+                </div>
+              </div>
+              <button class="carousel-arrow right" aria-label="Scroll right">&#8250;</button>
+            </div>
           </div>
         </div>
       </div>
@@ -197,7 +252,11 @@
         <span class="project-type">Web App</span>
       </div>
       <div class="project-body">
-        <div class="project-grid">
+        <div class="project-grid single-col">
+          <div class="project-media">
+            <div id="apophis-widget" data-width="600" data-height="400" data-mode="approach"></div>
+            <script src="https://apophiscountdown.com/widget/embed.js"></script>
+          </div>
           <div class="project-text">
             <p class="project-problem"><strong>Problem:</strong> In 2029, asteroid Apophis will pass closer to Earth than our geostationary satellites. There was no engaging, interactive resource tracking this event.</p>
             <p><strong>What I built:</strong> An educational countdown site with a 3D interactive orbital viewer, a public REST API for developers, and a content strategy built around structured data and SEO. A long-play project designed to grow an audience over time.</p>
@@ -230,10 +289,10 @@
               <span>Prompt Engineering</span>
               <span>API Chaining</span>
             </div>
-            <a href="https://memory.audio" target="_blank" rel="noopener" class="project-link">Try memory.audio</a>
+            <span class="project-link disabled">Coming soon</span>
           </div>
           <div class="project-media">
-            <img src="/img-temp/prompt_chain_diagram.svg" alt="Prompt chain diagram" class="diagram" />
+            <img src="/img-temp/memory-audio_cartridge_C.png" alt="memory.audio cartridge" />
           </div>
         </div>
       </div>

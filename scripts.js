@@ -1,44 +1,61 @@
+// ==================== SERVICE WORKER ====================
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
+
 // ==================== HERO PHOTO ROTATION ====================
 (function () {
   const heroImages = [
-    '/img-temp/pfp/16908425_1237161003006113_4796314937221709824_n.jpg',
-    '/img-temp/pfp/19933152_150074122229269_3460226018176925696_n.jpg',
-    '/img-temp/pfp/20634910_1304159146373791_2413335217314988032_n.jpg',
-    '/img-temp/pfp/242447269_2896054844040944_7968185486704733650_n.jpg',
-    '/img-temp/pfp/265942008_4886058971406114_8310174529552536656_n.jpeg',
-    '/img-temp/pfp/271855436_510100316986509_5718197132407865480_n.jpeg',
-    '/img-temp/pfp/284422572_979283019429137_2755411786017774232_n.jpeg',
-    '/img-temp/pfp/46465186_369010213661394_6295429840230107647_n.jpg',
-    '/img-temp/pfp/47582619_353538988797700_164052074848211876_n.jpg',
-    '/img-temp/pfp/OoE_close.png',
+    '/img/pfp/287213517_734802487967433_6188730041225448536_n.jpeg',
+    '/img/pfp/301436364_153064617397157_2804266410779234985_n.jpg',
+    '/img/pfp/367508911_257309977236903_6686988081987592737_n.jpeg',
+    '/img/pfp/blood-swirl.png',
+    '/img/pfp/ocean.png',
+    '/img/pfp/pink.png',
+    '/img/pfp/tf_lite_recognition.png',
   ];
 
   var heroDiv = document.getElementById('hero-photo');
   if (!heroDiv || heroImages.length === 0) return;
 
+  // Create two stacked layers for crossfade
+  var layerA = document.createElement('div');
+  var layerB = document.createElement('div');
+  layerA.className = 'hero-photo-layer';
+  layerB.className = 'hero-photo-layer';
+  layerB.style.opacity = '0';
+  heroDiv.appendChild(layerA);
+  heroDiv.appendChild(layerB);
+
+  var frontLayer = layerA;
+  var backLayer = layerB;
+
   var currentIndex = parseInt(localStorage.getItem('lastHeroImageIndex'), 10) || 0;
   currentIndex = (currentIndex + 1) % heroImages.length;
 
-  // Preload next image to avoid flash on transition
   function preload(src) {
     var img = new Image();
     img.src = src;
   }
 
   function show(index) {
-    heroDiv.style.opacity = '0';
-    setTimeout(function () {
-      heroDiv.style.backgroundImage = "url('" + heroImages[index] + "')";
-      heroDiv.style.opacity = '1';
-      localStorage.setItem('lastHeroImageIndex', index);
-      // Preload the next one
-      preload(heroImages[(index + 1) % heroImages.length]);
-    }, 600);
+    // Set next image on the back layer, then crossfade
+    backLayer.style.backgroundImage = "url('" + heroImages[index] + "')";
+    backLayer.style.opacity = '1';
+    frontLayer.style.opacity = '0';
+
+    localStorage.setItem('lastHeroImageIndex', index);
+    preload(heroImages[(index + 1) % heroImages.length]);
+
+    // Swap layer roles after transition completes
+    var prev = frontLayer;
+    frontLayer = backLayer;
+    backLayer = prev;
   }
 
-  // Set up the crossfade transition
-  heroDiv.style.transition = 'opacity 0.6s ease';
-  heroDiv.style.backgroundImage = "url('" + heroImages[currentIndex] + "')";
+  // Initial image
+  frontLayer.style.backgroundImage = "url('" + heroImages[currentIndex] + "')";
+  frontLayer.style.opacity = '1';
   localStorage.setItem('lastHeroImageIndex', currentIndex);
   preload(heroImages[(currentIndex + 1) % heroImages.length]);
 
@@ -51,38 +68,121 @@
 
 // ==================== VIDEO SWITCHER ====================
 (function () {
-  const carousel = document.getElementById('gallery-carousel-1');
-  const player = document.getElementById('gallery-player');
-  const caption = document.getElementById('gallery-caption');
+  var blobCache = {};
 
-  if (!carousel || !player || !caption) return;
-
-  // Handle thumbnail clicks — switch video and update active state
-  carousel.addEventListener('click', function (e) {
-    const thumb = e.target.closest('.thumb-item');
-    if (!thumb) return;
-    const img = thumb.querySelector('img[data-video]');
-    if (!img) return;
-
-    carousel.querySelectorAll('img').forEach(function (i) { i.classList.remove('active'); });
-    img.classList.add('active');
-
-    player.src = img.getAttribute('data-video');
-    player.load();
-    player.play();
-    caption.textContent = img.getAttribute('data-caption') || '';
-  });
-
-  // Arrow navigation
-  var wrapper = carousel.closest('.carousel-wrapper');
-  if (wrapper) {
-    wrapper.querySelector('.carousel-arrow.left').addEventListener('click', function () {
-      carousel.scrollBy({ left: -200, behavior: 'smooth' });
-    });
-    wrapper.querySelector('.carousel-arrow.right').addEventListener('click', function () {
-      carousel.scrollBy({ left: 200, behavior: 'smooth' });
+  function fetchAsBlob(url) {
+    if (blobCache[url]) return Promise.resolve(blobCache[url]);
+    return fetch(url).then(function (res) { return res.blob(); }).then(function (blob) {
+      blobCache[url] = URL.createObjectURL(blob);
+      return blobCache[url];
     });
   }
+
+  var carousels = [
+    { carousel: 'gallery-carousel-1', player: 'gallery-player', caption: 'gallery-caption' },
+    { carousel: 'fidget-carousel', player: 'fidget-player', caption: 'fidget-caption' }
+  ];
+
+  carousels.forEach(function (cfg) {
+    var carousel = document.getElementById(cfg.carousel);
+    var player = document.getElementById(cfg.player);
+    var caption = document.getElementById(cfg.caption);
+    if (!carousel || !player || !caption) return;
+
+    // Cache the initial video's blob URL on first play
+    var initialSrc = player.getAttribute('src');
+    if (initialSrc) {
+      fetchAsBlob(initialSrc).then(function (blobUrl) {
+        var currentTime = player.currentTime;
+        var wasPlaying = !player.paused;
+        player.src = blobUrl;
+        player.currentTime = currentTime;
+        if (wasPlaying) player.play();
+      });
+    }
+
+    // Handle thumbnail clicks — switch video and update active state
+    carousel.addEventListener('click', function (e) {
+      var thumb = e.target.closest('.thumb-item');
+      if (!thumb) return;
+      var media = thumb.querySelector('[data-video]');
+      if (!media) return;
+
+      var videoUrl = media.getAttribute('data-video');
+
+      carousel.querySelectorAll('[data-video]').forEach(function (el) { el.classList.remove('active'); });
+      media.classList.add('active');
+
+      var container = player.parentElement;
+      var currentHeight = container.offsetHeight;
+      container.style.height = currentHeight + 'px';
+
+      // Phase 1: fade out current video
+      player.classList.add('fade-out');
+
+      setTimeout(function () {
+        // Phase 2: load video from blob cache or fetch
+        fetchAsBlob(videoUrl).then(function (blobUrl) {
+          player.src = blobUrl;
+          player.load();
+
+          player.addEventListener('loadedmetadata', function onMeta() {
+            player.removeEventListener('loadedmetadata', onMeta);
+
+            // Phase 3: morph container to new aspect ratio
+            var newHeight = container.offsetWidth / (player.videoWidth / player.videoHeight);
+            container.style.height = newHeight + 'px';
+
+            // Phase 4: fade in after container finishes morphing
+            container.addEventListener('transitionend', function onMorph(e) {
+              if (e.propertyName !== 'height') return;
+              container.removeEventListener('transitionend', onMorph);
+              player.classList.remove('fade-out');
+              player.play();
+              container.style.height = '';
+            });
+          });
+        });
+      }, 300);
+      caption.textContent = media.getAttribute('data-caption') || '';
+    });
+
+    // Arrow navigation
+    var wrapper = carousel.closest('.carousel-wrapper');
+    if (wrapper) {
+      wrapper.querySelector('.carousel-arrow.left').addEventListener('click', function () {
+        carousel.scrollBy({ left: -200, behavior: 'smooth' });
+      });
+      wrapper.querySelector('.carousel-arrow.right').addEventListener('click', function () {
+        carousel.scrollBy({ left: 200, behavior: 'smooth' });
+      });
+    }
+
+    // Play thumb videos on hover
+    carousel.querySelectorAll('.thumb-video').forEach(function (vid) {
+      var parent = vid.closest('.thumb-item');
+      parent.addEventListener('mouseenter', function () { vid.play(); });
+      parent.addEventListener('mouseleave', function () { vid.pause(); vid.currentTime = 0; });
+    });
+  });
+})();
+
+// ==================== VIEWPORT AUTOPLAY ====================
+(function () {
+  var videos = document.querySelectorAll('.feature-video video');
+  if (!videos.length || !('IntersectionObserver' in window)) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.play();
+      } else {
+        entry.target.pause();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  videos.forEach(function (vid) { observer.observe(vid); });
 })();
 
 // ==================== SCROLL FADE-IN ====================

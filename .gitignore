@@ -1,3 +1,4 @@
-img/vid/
+img/
 fonts/
-img-temp/
+node_modules/
+fidget-video/

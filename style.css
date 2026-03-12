@@ -20,7 +20,7 @@
   --section-gap: 6rem;
 }
 
-html {
+html, body {
   overflow-x: hidden;
 }
 
@@ -52,6 +52,21 @@ img, video {
   border-radius: 8px;
 }
 
+.video-container {
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: height 0.4s ease;
+}
+.video-container video {
+  width: 100%;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+.video-container video.fade-out {
+  opacity: 0;
+}
+
 ul { list-style: none; }
 
 /* ==================== HERO ==================== */
@@ -59,17 +74,29 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   position: relative;
+  height: 100svh;
+  height: 100vh; /* fallback for older browsers */
+  height: 100svh;
 }
 
 .hero-photo {
-  height: 250px;
-  background-size: cover;
-  background-position: center top;
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
   background-color: #1a1a1a;
+  overflow: hidden;
+}
+
+.hero-photo-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1s ease;
 }
 
 .hero-content {
-  flex: 1;
+  flex: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -196,6 +223,10 @@ main {
 .project-grid {
   display: grid;
   gap: 2.5rem;
+  min-width: 0;
+}
+.project-grid > * {
+  min-width: 0;
 }
 .project-grid.two-col {
   grid-template-columns: 1fr;
@@ -225,13 +256,22 @@ main {
   margin: 1.5rem 0 0.5rem;
 }
 .partner-logo img {
-  height: 5rem;
-  width: auto;
+  width: 100%;
+  height: auto;
   opacity: 0.85;
   transition: opacity 0.2s;
 }
 .partner-logo img:hover {
   opacity: 1;
+}
+
+.feature-video {
+  margin-bottom: 2rem;
+}
+.feature-video video {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
 }
 
 .project-tech {
@@ -437,7 +477,7 @@ main {
   font-weight: 600;
   letter-spacing: -0.02em;
   padding: 0.75rem 1.25rem;
-  background: var(--text);
+  background: #4a4a5e;
   color: var(--bg);
   border-radius: 6px;
   margin-bottom: 2rem;
@@ -593,17 +633,19 @@ footer {
 
   #hero {
     flex-direction: row;
+    height: auto;
     min-height: 100vh;
   }
   .hero-photo {
     height: auto;
     flex: 0 0 40%;
   }
+  .hero-content {
+    flex: 1;
+    padding: 4rem 3rem;
+  }
   .scroll-indicator {
     display: block;
-  }
-  .hero-content {
-    padding: 4rem 3rem;
   }
 
   .project-grid.two-col {
@@ -614,6 +656,11 @@ footer {
   .thumb-item img,
   .thumb-video {
     height: 130px;
+  }
+
+  .partner-logo img {
+    width: auto;
+    height: 5rem;
   }
 
   .tech-grid {

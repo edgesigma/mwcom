@@ -6,13 +6,18 @@ if ('serviceWorker' in navigator) {
 // ==================== HERO PHOTO ROTATION ====================
 (function () {
   const heroImages = [
-    '/img/pfp/287213517_734802487967433_6188730041225448536_n.jpeg',
-    '/img/pfp/301436364_153064617397157_2804266410779234985_n.jpg',
-    '/img/pfp/367508911_257309977236903_6686988081987592737_n.jpeg',
-    '/img/pfp/blood-swirl.png',
-    '/img/pfp/ocean.png',
-    '/img/pfp/pink.png',
-    '/img/pfp/tf_lite_recognition.png',
+    { src: 'https://storage.googleapis.com/mwcom-media/img/pfp/287213517_734802487967433_6188730041225448536_n.jpeg',
+      caption: 'Ocean of Eyes (detail), 2023' },
+    { src: 'https://storage.googleapis.com/mwcom-media/img/pfp/301436364_153064617397157_2804266410779234985_n.jpg',
+      caption: '934 + Digital Garage Design Thinking Camp, 2022' },
+    { src: 'https://storage.googleapis.com/mwcom-media/img/pfp/367508911_257309977236903_6686988081987592737_n.jpeg',
+      caption: '934 Mural Fest — Media Facade, 2023' },
+    { src: 'https://storage.googleapis.com/mwcom-media/img/pfp/blood-swirl.png',
+      caption: 'Chiasm, 2023' },
+    { src: 'https://storage.googleapis.com/mwcom-media/img/pfp/ocean.png',
+      caption: 'Ocean of Eyes, 2023' },
+    { src: 'https://storage.googleapis.com/mwcom-media/img/pfp/pink.png',
+      caption: 'Ocean of Eyes (viewer interacting), 2023' },
   ];
 
   var heroDiv = document.getElementById('hero-photo');
@@ -27,6 +32,11 @@ if ('serviceWorker' in navigator) {
   heroDiv.appendChild(layerA);
   heroDiv.appendChild(layerB);
 
+  // Caption element
+  var captionEl = document.createElement('div');
+  captionEl.className = 'hero-caption';
+  heroDiv.appendChild(captionEl);
+
   var frontLayer = layerA;
   var backLayer = layerB;
 
@@ -38,14 +48,24 @@ if ('serviceWorker' in navigator) {
     img.src = src;
   }
 
+  function updateCaption(index) {
+    captionEl.style.opacity = '0';
+    setTimeout(function () {
+      captionEl.textContent = heroImages[index].caption;
+      captionEl.style.opacity = '1';
+    }, 500);
+  }
+
   function show(index) {
     // Set next image on the back layer, then crossfade
-    backLayer.style.backgroundImage = "url('" + heroImages[index] + "')";
+    backLayer.style.backgroundImage = "url('" + heroImages[index].src + "')";
     backLayer.style.opacity = '1';
     frontLayer.style.opacity = '0';
 
+    updateCaption(index);
+
     localStorage.setItem('lastHeroImageIndex', index);
-    preload(heroImages[(index + 1) % heroImages.length]);
+    preload(heroImages[(index + 1) % heroImages.length].src);
 
     // Swap layer roles after transition completes
     var prev = frontLayer;
@@ -54,10 +74,11 @@ if ('serviceWorker' in navigator) {
   }
 
   // Initial image
-  frontLayer.style.backgroundImage = "url('" + heroImages[currentIndex] + "')";
+  frontLayer.style.backgroundImage = "url('" + heroImages[currentIndex].src + "')";
   frontLayer.style.opacity = '1';
+  captionEl.textContent = heroImages[currentIndex].caption;
   localStorage.setItem('lastHeroImageIndex', currentIndex);
-  preload(heroImages[(currentIndex + 1) % heroImages.length]);
+  preload(heroImages[(currentIndex + 1) % heroImages.length].src);
 
   // Cycle every 8 seconds
   setInterval(function () {

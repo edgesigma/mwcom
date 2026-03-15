@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maurice Wingfield — Developer</title>
-  <meta name="description" content="I build interactive digital experiences that connect people to art, music, and culture." />
+  <title>Maurice Wingfield — Creative Technologist</title>
+  <meta name="description" content="Creative technologist with 15+ years in web development. I build across platforms; web, mobile, and hardware. Leading with curiosity and a bias towards action." />
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -23,8 +23,8 @@
       "https://x.com/noslugg",
       "mailto:yell@mauricewingfield.com"
     ],
-    "jobTitle": "Developer",
-    "description": "I build interactive digital experiences that connect people to art, music, and culture."
+    "jobTitle": "Creative Technologist",
+    "description": "Creative technologist with 15+ years in web development. I build across platforms; web, mobile, and hardware. Leading with curiosity and a bias towards action."
   }
   </script>
 
@@ -64,9 +64,13 @@
       <div class="section-inner">
         <h2>About</h2>
         <div class="about-content">
-          <p>I'm a developer who builds across platforms — web, mobile, hardware. I care less about any single framework and more about making things that work for the people using them.</p>
+          <div class="about-photo">
+            <img src="https://storage.googleapis.com/mwcom-media/img/pfp/tf_lite_recognition.png" alt="Object detection with OpenCV on Raspberry Pi" />
+            <span class="about-photo-caption">Object Detection with OpenCV on Raspberry Pi, 2022</span>
+          </div>
+          <p>I'm a creative technologist with 15+ years of experience in web development. Self-taught, I lead with curiosity, a bias towards action, and a need to get my hands dirty learning by doing.</p>
+          <p>The result is a broad functional knowledge base, a couple pillars of domain expertise, and proficiency with AI tools to go deep on a per-project basis.</p>
           <p>As a former board member at <a href="https://934gallery.org/" target="_blank" rel="noopener">934 Gallery</a>, I understand cultural institutions from the inside: the budgets, the missions, the balance between public experience and operational reality. I've built interactive exhibits, originated youth programs, and managed the kind of cross-functional work that small teams require.</p>
-          <p>I integrate AI tools into my development workflow to move faster and explore more solutions — but I understand what the code does and why. Every architectural decision in this portfolio is one I can speak to.</p>
         </div>
       </div>
     </section>
@@ -87,68 +91,72 @@
       <div class="project-body">
         <div class="project-grid two-col">
           <div class="project-text">
-            <p class="project-problem"><strong>Problem:</strong> Research shows fidgeting can improve attention by 15-20%, but most phone use during focus time is counterproductive.</p>
-            <p><strong>What I built:</strong> An Android app that channels the impulse to pick up your phone into a controlled, non-distracting interaction — working with human behavior instead of against it.</p>
-            <p><strong>Where it is now:</strong> Actively in beta with real users providing feedback. Not a toy project — a product I'm shipping.</p>
+            <p class="project-problem"><strong>The problem:</strong> The average person picks up their phone 96 times a day. Most screen-time solutions fight human behavior head-on; blocking apps and hoping willpower handles the rest. After quitting Instagram cold turkey, I found myself picking up my phone throughout the day and just staring at the empty space the icon used to be. Just staring at the phone with nothing to do. That was the seed of the Fidget Feed user experience; a tappable, swipable UI playground with haptic feedback. An attempt to give my brain the dopamine it craved without all the distraction.</p>
+            <p><strong>Product:</strong> Using Sensor Tower for market analysis and social media communities for user research, I validated the concept and developed a distinct name and design language. Fidget Feed is a two-word domain that describes the product in the simplest terms.</p>
+            <p><strong>Design:</strong> Instead of stopping users dead in their tracks, I designed an alternate feed of low-cognitive-load fidget widgets. Figma explorations took the feed and onboarding through multiple iterations. The breakthrough: the best way to communicate the experience is to put live interactive widgets front and center in onboarding; better shown than described.</p>
+            <p><strong>Tech:</strong> Built natively in Android Studio with coding agents as a core part of the workflow. Starting with GitHub Copilot Agent taught me the fundamentals of context engineering. Moving to Claude Code with the Opus 4.5 release was a step change in agent capability.</p>
+            <p><strong>Where it is now:</strong> Entering beta, the final step before applying for the Google Play Store.</p>
             <div class="project-tech">
               <span>Android</span>
               <span>Kotlin</span>
-              <span>UX Research</span>
+              <span>Figma</span>
+              <span>Market Analysis</span>
               <span>Product Design</span>
+              <span>Context Engineering</span>
             </div>
-            <a href="https://fidgetfeed.com" target="_blank" rel="noopener" class="project-link">Visit Fidget Feed</a>
+            <a href="https://fidgetfeed.com" target="_blank" rel="noopener" class="project-link">Join the Beta</a>
           </div>
           <div class="project-media">
             <div class="video-container">
               <video id="fidget-player" autoplay loop muted playsinline
-                src="/fidget-video/clicky-wheel-cropped-captioned.mp4">
+                src="https://storage.googleapis.com/mwcom-media/fidget-video/clicky-wheel-cropped-captioned.mp4">
               </video>
             </div>
-            <p class="media-caption" id="fidget-caption">Clicky Wheel — a satisfying rotary fidget with haptic clicks.</p>
+            <p class="media-caption" id="fidget-caption">Clicky Wheel: a satisfying rotary fidget with haptic clicks.</p>
 
             <div class="carousel-wrapper">
               <button class="carousel-arrow left" aria-label="Scroll left">&#8249;</button>
               <div class="gallery-carousel" id="fidget-carousel">
                 <div class="thumb-item active-thumb">
-                  <video src="/fidget-video/clicky-wheel-cropped-captioned.mp4" muted loop class="thumb-video active"
-                    data-video="/fidget-video/clicky-wheel-cropped-captioned.mp4"
-                    data-caption="Clicky Wheel — a satisfying rotary fidget with haptic clicks."></video>
+                  <video src="https://storage.googleapis.com/mwcom-media/fidget-video/clicky-wheel-cropped-captioned.mp4" muted loop class="thumb-video active"
+                    data-video="https://storage.googleapis.com/mwcom-media/fidget-video/clicky-wheel-cropped-captioned.mp4"
+                    data-caption="Clicky Wheel: a satisfying rotary fidget with haptic clicks."></video>
                   <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
                 </div>
                 <div class="thumb-item">
-                  <video src="/fidget-video/dial-block-cropped.mp4" muted loop class="thumb-video"
-                    data-video="/fidget-video/dial-block-cropped.mp4"
-                    data-caption="Dial Block — rotary dial interaction with resistance feedback."></video>
+                  <video src="https://storage.googleapis.com/mwcom-media/fidget-video/dial-block-cropped.mp4" muted loop class="thumb-video"
+                    data-video="https://storage.googleapis.com/mwcom-media/fidget-video/dial-block-cropped.mp4"
+                    data-caption="Dial Block: rotary dial interaction with resistance feedback."></video>
                   <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
                 </div>
                 <div class="thumb-item">
-                  <video src="/fidget-video/magnetic-tile-cropped.mp4" muted loop class="thumb-video"
-                    data-video="/fidget-video/magnetic-tile-cropped.mp4"
-                    data-caption="Magnetic Tile — snap-to-grid tile sliding."></video>
+                  <video src="https://storage.googleapis.com/mwcom-media/fidget-video/magnetic-tile-cropped.mp4" muted loop class="thumb-video"
+                    data-video="https://storage.googleapis.com/mwcom-media/fidget-video/magnetic-tile-cropped.mp4"
+                    data-caption="Magnetic Tile: snap-to-grid tile sliding."></video>
                   <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
                 </div>
                 <div class="thumb-item">
-                  <video src="/fidget-video/some-chords-cropped.mp4" muted loop class="thumb-video"
-                    data-video="/fidget-video/some-chords-cropped.mp4"
-                    data-caption="Some Chords — strum guitar chords with a swipe."></video>
+                  <video src="https://storage.googleapis.com/mwcom-media/fidget-video/some-chords-cropped.mp4" muted loop class="thumb-video"
+                    data-video="https://storage.googleapis.com/mwcom-media/fidget-video/some-chords-cropped.mp4"
+                    data-caption="Some Chords: strum guitar chords with a swipe."></video>
                   <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
                 </div>
                 <div class="thumb-item">
-                  <video src="/fidget-video/tap-typing-cropped.mp4" muted loop class="thumb-video"
-                    data-video="/fidget-video/tap-typing-cropped.mp4"
-                    data-caption="Tap Typing — typewriter-style key tapping."></video>
+                  <video src="https://storage.googleapis.com/mwcom-media/fidget-video/tap-typing-cropped.mp4" muted loop class="thumb-video"
+                    data-video="https://storage.googleapis.com/mwcom-media/fidget-video/tap-typing-cropped.mp4"
+                    data-caption="Tap Typing: typewriter-style key tapping."></video>
                   <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
                 </div>
                 <div class="thumb-item">
-                  <video src="/fidget-video/trapped-bead-cropped.mp4" muted loop class="thumb-video"
-                    data-video="/fidget-video/trapped-bead-cropped.mp4"
-                    data-caption="Trapped Bead — guide a bead through a maze by tilting."></video>
+                  <video src="https://storage.googleapis.com/mwcom-media/fidget-video/trapped-bead-cropped.mp4" muted loop class="thumb-video"
+                    data-video="https://storage.googleapis.com/mwcom-media/fidget-video/trapped-bead-cropped.mp4"
+                    data-caption="Trapped Bead: guide a bead through a maze by tilting."></video>
                   <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
                 </div>
                 <div class="thumb-item">
-                  <video src="/fidget-video/bubble_preview/bubble-combined.mp4" muted loop class="thumb-video"
-                    data-video="/fidget-video/bubble_preview/bubble-combined.mp4"
-                    data-caption="Bubble Pop — tap to pop satisfying bubbles."></video>
+                  <video src="https://storage.googleapis.com/mwcom-media/fidget-video/bubble_preview/bubble-combined.mp4" muted loop class="thumb-video"
+                    data-video="https://storage.googleapis.com/mwcom-media/fidget-video/bubble_preview/bubble-combined.mp4"
+                    data-caption="Bubble Pop: tap to pop satisfying bubbles."></video>
                   <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
                 </div>
               </div>
@@ -168,17 +176,17 @@
       <div class="project-body">
         <div class="feature-video">
           <video loop muted playsinline
-            src="/img/vid/cbus_cityTV.mp4">
+            src="https://storage.googleapis.com/mwcom-media/img/vid/cbus_cityTV.mp4">
           </video>
         </div>
         <div class="project-grid two-col">
           <div class="project-text">
-            <p>In 2023, I joined the board of <a href="https://934gallery.org/" target="_blank" rel="noopener">934 Gallery</a> and opened the Digital Garage — a new space dedicated to interactive and digital art. I built exhibits using vision tracking systems, projection mapping with Touchdesigner, and hand-made LED panel installations. Visitors walk into a room and the art responds to their movement.</p>
-            <p>That work led to a <a href="https://citypulsecolumbus.com/maurice-wingfield-curates-digital-first-gallery/" target="_blank" rel="noopener">Columbus City Pulse feature</a> and a Columbus Arts Council grant to create the 934 Digital Garage Youth Summer Design Thinking Camp — a free five-week STEM camp for 12 Columbus City Schools high schoolers. Students created 2D animations in Pencil and 3D models in Blender, then used Touchdesigner to build an immersive projection-based art piece — their final experience design project, unveiled at an opening reception during 934 Fest. Every student kept their tech kit at the end.</p>
+            <p>In 2022, I joined the board of <a href="https://934gallery.org/" target="_blank" rel="noopener">934 Gallery</a>, a beloved art gallery in the Milo Grogan neighborhood of Columbus, Ohio. That summer, while volunteering for Mural Fest, the gallery's annual fundraiser, Liz Martin, then board president, accepted my proposal to reclaim an unused garage space and turn it into a digital-focused art space. I built exhibits using vision tracking systems, projection mapping with Touchdesigner, and hand-made LED panel installations. Visitors walk into a room and the art responds to their movement.</p>
+            <p>That first collaboration led to a <a href="https://citypulsecolumbus.com/maurice-wingfield-curates-digital-first-gallery/" target="_blank" rel="noopener">Columbus City Pulse feature</a> and a Columbus Arts Council grant to create the 934 Digital Garage Youth Summer Design Thinking Camp, a free five-week STEM camp for 12 Columbus City Schools high schoolers. Students created 2D animations in Pencil and 3D models in Blender, then used Touchdesigner to build an immersive projection-based art piece; their final experience design project, unveiled at an opening reception during Mural Fest. Every student kept their tech kit at the end.</p>
             <div class="partner-logo">
-              <img src="/img/COSI_science_museum_logo.svg" alt="COSI logo" />
+              <img src="https://storage.googleapis.com/mwcom-media/img/COSI_science_museum_logo.svg" alt="COSI logo" />
             </div>
-            <p>The following year, I partnered with COSI to develop a four-week Systems Thinking STEAM module for their Platform Program. Students learned the four modes of systems thinking — making distinctions, seeing cause and effect, understanding parts and wholes, and taking perspectives — through hands-on art making with a different guest creator each week: Allan Pichardo (software developer and digital musician), Krista Faist (art educator), Jayce (AI artist and workshop facilitator), and Dom Deshawn (Columbus-based performer).</p>
+            <p>The following year, I partnered with COSI to develop a four-week Systems Thinking STEAM module for their Platform Program. Students learned the four modes of systems thinking; making distinctions, seeing cause and effect, understanding parts and wholes, and taking perspectives, through hands-on art making with a different guest creator each week: Allan Pichardo (software developer and digital musician), Krista Faist (art educator), Jayce (AI artist and workshop facilitator), and Dom Deshawn (Columbus-based performer).</p>
             <div class="project-tech">
               <span>Computer Vision</span>
               <span>Touchdesigner</span>
@@ -191,7 +199,7 @@
           <div class="project-media">
             <div class="video-container">
               <video id="gallery-player" autoplay loop muted playsinline
-                src="/img/vid/blood_pool.mp4">
+                src="https://storage.googleapis.com/mwcom-media/img/vid/blood_pool.mp4">
               </video>
             </div>
             <p class="media-caption" id="gallery-caption">Untitled: In the Garage east room, visitors enter a cold dark space. The vision system tracks the movement of their right hand only.</p>
@@ -200,29 +208,29 @@
               <button class="carousel-arrow left" aria-label="Scroll left">&#8249;</button>
               <div class="gallery-carousel" id="gallery-carousel-1">
                 <div class="thumb-item">
-                  <img src="/img/vid/blood-swirl.png" class="active"
-                    data-video="/img/vid/blood_pool.mp4"
+                  <img src="https://storage.googleapis.com/mwcom-media/img/vid/blood-swirl.png" class="active"
+                    data-video="https://storage.googleapis.com/mwcom-media/img/vid/blood_pool.mp4"
                     data-caption="Untitled: In the Garage east room, visitors enter a cold dark space. The vision system tracks the movement of their right hand only."
                     alt="Blood swirl installation" />
                   <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
                 </div>
                 <div class="thumb-item">
-                  <img src="/img/vid/air-pixels.png"
-                    data-video="/img/vid/2400C9CA-20F2-4242-AE45-A0A1C41D52DA.MOV"
+                  <img src="https://storage.googleapis.com/mwcom-media/img/vid/air-pixels.png"
+                    data-video="https://storage.googleapis.com/mwcom-media/img/vid/2400C9CA-20F2-4242-AE45-A0A1C41D52DA.MOV"
                     data-caption="Untitled: Rear projected onto the front windows of the main gallery. Video collage."
                     alt="Air pixels projection" />
                   <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
                 </div>
                 <div class="thumb-item">
-                  <img src="/img/vid/ocean.png"
-                    data-video="/img/vid/ocean_of_eyes_A.mp4"
+                  <img src="https://storage.googleapis.com/mwcom-media/img/vid/ocean.png"
+                    data-video="https://storage.googleapis.com/mwcom-media/img/vid/ocean_of_eyes_A.mp4"
                     data-caption="Ocean of Eyes: In the west room of the Digital Garage. Hand-made LED panel installation."
                     alt="Ocean of Eyes LED panels" />
                   <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
                 </div>
                 <div class="thumb-item">
-                  <img src="/img/468962380_18484882192013456_2019320553203877550_n.jpg"
-                    data-video="/img/vid/0000000001.MOV"
+                  <img src="https://storage.googleapis.com/mwcom-media/img/468962380_18484882192013456_2019320553203877550_n.jpg"
+                    data-video="https://storage.googleapis.com/mwcom-media/img/vid/0000000001.MOV"
                     data-caption="Work in progress: First stitched video projection on the front windows after application of projection film."
                     alt="Window projection" />
                   <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
@@ -232,8 +240,8 @@
             </div>
 
             <div class="gallery-photos">
-              <img src="/img/touch_designer.png" alt="Touchdesigner spatial mapping" />
-              <img src="/img/934_summer_camp.png" alt="Student workstations" />
+              <img src="https://storage.googleapis.com/mwcom-media/img/touch_designer.png" alt="Touchdesigner spatial mapping" />
+              <img src="https://storage.googleapis.com/mwcom-media/img/934_summer_camp.png" alt="Student workstations" />
             </div>
             <div class="gallery-photos-captions">
               <p class="media-caption">Touchdesigner used to map a volume of virtual space to the real space of the Garage.</p>
@@ -257,8 +265,8 @@
             <script src="https://apophiscountdown.com/widget/embed.js"></script>
           </div>
           <div class="project-text">
-            <p class="project-problem"><strong>Problem:</strong> In 2029, asteroid Apophis will pass closer to Earth than our geostationary satellites. There was no engaging, interactive resource tracking this event.</p>
-            <p><strong>What I built:</strong> An educational countdown site with a 3D interactive orbital viewer, a public REST API for developers, and a content strategy built around structured data and SEO. A long-play project designed to grow an audience over time.</p>
+            <p>A personal project with the intention of turning public attention heavenward. 99942 Apophis is an asteroid roughly the size of the Eiffel Tower on course to pass between the Earth and Moon on April 13, 2029. Discovered in 2004, it went from a possible collision threat to confirmed safe, and passed back into obscurity. I suspect for a day or two it will be one of the most discussed stories on the planet. This project is a long-play for that moment of attention.</p>
+            <p><strong>What I built:</strong> An educational countdown site with a 3D interactive orbital viewer, a public REST API for developers, and a content strategy built around structured data and SEO.</p>
             <div class="project-tech">
               <span>Three.js</span>
               <span>REST API</span>
@@ -280,18 +288,19 @@
       <div class="project-body">
         <div class="project-grid two-col">
           <div class="project-text">
-            <p class="project-problem"><strong>Problem:</strong> Learning a new topic shouldn't require hours of searching and reading. Sometimes you just want a concise audio lesson you can absorb on a commute.</p>
-            <p><strong>What I built:</strong> An AI-powered audio lesson generator. Users submit a learning goal as text; the app validates, scopes, and transforms it through a chain of prompts — moderation, inference, SSML markup — then generates naturalistic audio via GCP Text-to-Speech.</p>
+            <p>As I dove into the AI state of the art in early 2025, I built memory.audio to learn how to leverage LLMs to deliver real value to users. The app takes a single plain-English prompt and generates a 4–5 minute audio lesson on practically any subject.</p>
+            <p>Building in public on X, the app drew about a hundred users who provided feedback. A second iteration added rudimentary cognitive assessments; memory baselines users could track over time. A third added two-party conversation-style podcasts to complement the rote-repetition lessons. At that point, I realized I was recreating Google NotebookLM and decided to retire the project. The cognitive assessment angle still has legs; I expect to revisit it.</p>
+            <p><strong>Tech:</strong> What started as scripts on my laptop became a fully deployed web app powered by OpenAI's completion API and Google Cloud Text-to-Speech. The project has since been taken offline.</p>
             <div class="project-tech">
               <span>OpenAI API</span>
               <span>GCP Text-to-Speech</span>
               <span>Prompt Engineering</span>
               <span>API Chaining</span>
             </div>
-            <span class="project-link disabled">Coming soon</span>
+            <span class="project-link disabled">Currently offline</span>
           </div>
           <div class="project-media">
-            <img src="/img/memory-audio_cartridge_C.png" alt="memory.audio cartridge" />
+            <img src="https://storage.googleapis.com/mwcom-media/img/memory-audio_cartridge_C.png" alt="memory.audio cartridge" />
           </div>
         </div>
       </div>
@@ -304,11 +313,11 @@
 
         <div class="tech-agents">
           <h3>Agentic Engineering</h3>
-          <p>I build with coding agents as a core part of my workflow — not as a crutch, but as a multiplier that lets me move faster across unfamiliar stacks.</p>
+          <p>I build with coding agents as a core part of my workflow; not as a crutch, but as a multiplier that lets me move faster across unfamiliar stacks.</p>
           <div class="agent-tools">
             <div class="agent-tool">
               <strong>Claude Code</strong>
-              <span>Max subscriber (5x). My primary coding agent — used deeply in Android Studio for Fidget Feed development. Architectural decisions, debugging, and rapid prototyping across Kotlin, JS, and Python.</span>
+              <span>Max subscriber (5x). My primary coding agent, used deeply in Android Studio for Fidget Feed development. Architectural decisions, debugging, and rapid prototyping across Kotlin, JS, and Python.</span>
             </div>
             <div class="agent-tool">
               <strong>GitHub Copilot Agent</strong>

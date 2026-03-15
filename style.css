@@ -95,6 +95,24 @@ ul { list-style: none; }
   transition: opacity 1s ease;
 }
 
+.hero-caption {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 0.3rem 0.6rem;
+  border-radius: 3px;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  font-style: italic;
+}
+
 .hero-content {
   flex: none;
   display: flex;
@@ -249,7 +267,7 @@ main {
 }
 
 .project-text .project-problem {
-  color: var(--text);
+  color: var(--text-muted);
 }
 
 .partner-logo {
@@ -483,13 +501,48 @@ main {
   margin-bottom: 2rem;
 }
 
+.about-photo {
+  float: right;
+  width: 260px;
+  margin: 0 0 1.5rem 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.about-photo img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+.about-photo-caption {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  .about-photo {
+    float: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 1.5rem;
+  }
+}
+
 .about-content p {
   color: var(--text-muted);
   margin-bottom: 1rem;
   max-width: 640px;
 }
-.about-content a {
+.about-content a,
+.project-text a {
   color: var(--accent);
+  text-decoration: underline;
+}
+.project-text a.project-link {
+  color: var(--bg);
+  text-decoration: none;
 }
 
 /* ==================== TECHNOLOGIES ==================== */

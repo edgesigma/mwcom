@@ -96,6 +96,9 @@ if ('serviceWorker' in navigator) {
     return fetch(url).then(function (res) { return res.blob(); }).then(function (blob) {
       blobCache[url] = URL.createObjectURL(blob);
       return blobCache[url];
+    }).catch(function () {
+      // CORS or network error — fall back to direct URL
+      return url;
     });
   }
 

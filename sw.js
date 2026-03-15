@@ -36,11 +36,14 @@ self.addEventListener('fetch', function (event) {
         if (cached) return cached;
 
         return fetch(event.request).then(function (response) {
-          // Only cache successful responses
-          if (response.ok) {
+          // Only cache successful, same-origin or CORS-enabled responses
+          if (response.ok && response.type !== 'opaque') {
             cache.put(event.request, response.clone());
           }
           return response;
+        }).catch(function () {
+          // Cross-origin fetch failed — let the browser handle it natively
+          return fetch(event.request, { mode: 'no-cors' });
         });
       });
     })

@@ -150,18 +150,28 @@ if ('serviceWorker' in navigator) {
           player.addEventListener('loadedmetadata', function onMeta() {
             player.removeEventListener('loadedmetadata', onMeta);
 
+            function fadeIn() {
+              player.classList.remove('fade-out');
+              player.play();
+              container.style.height = '';
+            }
+
             // Phase 3: morph container to new aspect ratio
+            var oldHeight = container.offsetHeight;
             var newHeight = container.offsetWidth / (player.videoWidth / player.videoHeight);
             container.style.height = newHeight + 'px';
 
             // Phase 4: fade in after container finishes morphing
-            container.addEventListener('transitionend', function onMorph(e) {
-              if (e.propertyName !== 'height') return;
-              container.removeEventListener('transitionend', onMorph);
-              player.classList.remove('fade-out');
-              player.play();
-              container.style.height = '';
-            });
+            // If height didn't change, transitionend won't fire — fade in directly
+            if (Math.abs(newHeight - oldHeight) < 1) {
+              fadeIn();
+            } else {
+              container.addEventListener('transitionend', function onMorph(e) {
+                if (e.propertyName !== 'height') return;
+                container.removeEventListener('transitionend', onMorph);
+                fadeIn();
+              });
+            }
           });
         });
       }, 300);

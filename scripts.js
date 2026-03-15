@@ -89,19 +89,6 @@ if ('serviceWorker' in navigator) {
 
 // ==================== VIDEO SWITCHER ====================
 (function () {
-  var blobCache = {};
-
-  function fetchAsBlob(url) {
-    if (blobCache[url]) return Promise.resolve(blobCache[url]);
-    return fetch(url).then(function (res) { return res.blob(); }).then(function (blob) {
-      blobCache[url] = URL.createObjectURL(blob);
-      return blobCache[url];
-    }).catch(function () {
-      // CORS or network error — fall back to direct URL
-      return url;
-    });
-  }
-
   var carousels = [
     { carousel: 'gallery-carousel-1', player: 'gallery-player', caption: 'gallery-caption' },
     { carousel: 'fidget-carousel', player: 'fidget-player', caption: 'fidget-caption' }
@@ -112,18 +99,6 @@ if ('serviceWorker' in navigator) {
     var player = document.getElementById(cfg.player);
     var caption = document.getElementById(cfg.caption);
     if (!carousel || !player || !caption) return;
-
-    // Cache the initial video's blob URL on first play
-    var initialSrc = player.getAttribute('src');
-    if (initialSrc) {
-      fetchAsBlob(initialSrc).then(function (blobUrl) {
-        var currentTime = player.currentTime;
-        var wasPlaying = !player.paused;
-        player.src = blobUrl;
-        player.currentTime = currentTime;
-        if (wasPlaying) player.play();
-      });
-    }
 
     // Handle thumbnail clicks — switch video and update active state
     carousel.addEventListener('click', function (e) {
@@ -145,37 +120,35 @@ if ('serviceWorker' in navigator) {
       player.classList.add('fade-out');
 
       setTimeout(function () {
-        // Phase 2: load video from blob cache or fetch
-        fetchAsBlob(videoUrl).then(function (blobUrl) {
-          player.src = blobUrl;
-          player.load();
+        // Phase 2: load new video directly (no fetch — avoids CORS on cross-origin media)
+        player.src = videoUrl;
+        player.load();
 
-          player.addEventListener('loadedmetadata', function onMeta() {
-            player.removeEventListener('loadedmetadata', onMeta);
+        player.addEventListener('loadedmetadata', function onMeta() {
+          player.removeEventListener('loadedmetadata', onMeta);
 
-            function fadeIn() {
-              player.classList.remove('fade-out');
-              player.play();
-              container.style.height = '';
-            }
+          function fadeIn() {
+            player.classList.remove('fade-out');
+            player.play();
+            container.style.height = '';
+          }
 
-            // Phase 3: morph container to new aspect ratio
-            var oldHeight = container.offsetHeight;
-            var newHeight = container.offsetWidth / (player.videoWidth / player.videoHeight);
-            container.style.height = newHeight + 'px';
+          // Phase 3: morph container to new aspect ratio
+          var oldHeight = container.offsetHeight;
+          var newHeight = container.offsetWidth / (player.videoWidth / player.videoHeight);
+          container.style.height = newHeight + 'px';
 
-            // Phase 4: fade in after container finishes morphing
-            // If height didn't change, transitionend won't fire — fade in directly
-            if (Math.abs(newHeight - oldHeight) < 1) {
+          // Phase 4: fade in after container finishes morphing
+          // If height didn't change, transitionend won't fire — fade in directly
+          if (Math.abs(newHeight - oldHeight) < 1) {
+            fadeIn();
+          } else {
+            container.addEventListener('transitionend', function onMorph(e) {
+              if (e.propertyName !== 'height') return;
+              container.removeEventListener('transitionend', onMorph);
               fadeIn();
-            } else {
-              container.addEventListener('transitionend', function onMorph(e) {
-                if (e.propertyName !== 'height') return;
-                container.removeEventListener('transitionend', onMorph);
-                fadeIn();
-              });
-            }
-          });
+            });
+          }
         });
       }, 300);
       caption.textContent = media.getAttribute('data-caption') || '';

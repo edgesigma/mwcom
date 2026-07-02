@@ -16,7 +16,7 @@
     --footer-bg:#0E5C63;   /* footer field — independent of the hero (warm hero / cool footer) */
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;background:var(--footer-bg)}   /* teal canvas so no light hairline peeks below the footer */
   body{margin:0;font-family:"Source Serif 4",Georgia,serif;color:var(--ink);
        background:var(--cream) url("assets/ricepaper.png") repeat}
   img{max-width:100%;display:block}
@@ -72,6 +72,8 @@
   .work .proj{max-width:760px;margin:0 auto;padding:3.4vh 0;border-top:1px solid rgba(22,18,14,.18);scroll-margin-top:2rem}
   .work .proj .eyebrow{color:var(--magenta-deep);font-size:14px;margin-bottom:.4rem}
   .work .proj h3{font-size:clamp(24px,3.2vw,38px);margin:0 0 .8rem;scroll-margin-top:2.5rem}
+  /* bare newsprint face — marginal portrait marking each hotspot-linked station */
+  .work .proj .face{float:right;width:clamp(120px,14vw,155px);height:auto;margin:.1rem 0 .8rem 1.6rem}
   .work .proj p{max-width:none;font-size:clamp(16px,1.2vw,19px);line-height:1.6;margin:0;color:var(--ink)}
   /* project block — context hook + the three systems-thinking lenses (fill the full .proj width) */
   .work .proj .hook{font-family:"Spectral",serif;font-style:italic;color:var(--ink-soft);
@@ -103,7 +105,7 @@
   .ft2.light{color:var(--ink)}                       /* for light footer grounds (cyan/cream) */
   .ft2.light .mail{border-bottom-color:var(--ink)}
   /* footer face treatments (from the DK-chart portraits) */
-  .ft2 .face-payoff{position:absolute;right:3vw;bottom:-3vh;width:clamp(200px,26vw,380px);z-index:0;
+  .ft2 .face-payoff{position:absolute;right:3vw;bottom:3vh;width:clamp(200px,26vw,380px);z-index:0;
                     pointer-events:none;filter:drop-shadow(0 10px 26px rgba(0,0,0,.28))}
   .ft2 .face-emoji{display:none;height:.86em;width:auto;vertical-align:-.2em;margin-left:.1em}
   .ft2 h2,.ft2 .eyebrow,.ft2 .mail,.ft2 .social,.ft2 .fine{position:relative;z-index:1}
@@ -114,6 +116,10 @@
              border-bottom:2px solid var(--cream);padding-bottom:3px}
   .ft2 .social{display:flex;gap:1.6rem;margin-top:3rem;font-size:15px;letter-spacing:.03em;opacity:.9}
   .ft2 .fine{margin-top:4rem;font-size:12px;letter-spacing:.04em;opacity:.7}
+  /* copyright — its own strip below the footer so it always clears the face */
+  .ftcopy{background:var(--footer-bg);color:rgba(243,234,215,.6);
+          padding:.2rem 7vw 2.6rem;font-size:12px;letter-spacing:.04em;
+          margin-top:-1px}   /* overlap the footer to kill the sub-pixel seam */
 
   @media(max-width:820px){
     /* card sized to content (not stretched), centered, art breathing above & below */
@@ -122,6 +128,7 @@
     .hero .copy{max-width:none;width:100%;margin:9vh 6vw;padding:2.2rem 1.9rem;transform:translateY(10vh)}
     /* footer face: shrink + tuck into the corner so it clears the links on small screens */
     .ft2 .face-payoff{width:90px;right:5vw;bottom:3vh}
+    .ft2 .social{margin-bottom:8rem}   /* clearance so the bottom-anchored face sits below the links */
   }
 </style>
 </head>
@@ -147,8 +154,8 @@
     <div class="chart">
       <img src="assets/dunning-kruger_FINAL.png" alt="Dunning-Kruger effect curve with a portrait marking each of the four project stations">
       <a class="hot" href="#memory-audio-header" aria-label="Peak of Mt. Stupid — memory.audio" style="left:22.34%;top:28.52%;width:10.42%"></a>
-      <a class="hot" href="#fidget-feed-header"  aria-label="Valley of Despair — Fidget Feed"     style="left:29.84%;top:66.48%;width:10.52%"></a>
-      <a class="hot" href="#RedLine-header"       aria-label="Slope of Enlightenment — RedLine"    style="left:47.40%;top:51.57%;width:10.94%"></a>
+      <a class="hot" href="#scenesprint-header"  aria-label="Valley of Despair — sceneSprint"     style="left:29.84%;top:66.48%;width:10.52%"></a>
+      <a class="hot" href="#fidget-feed-header"    aria-label="Slope of Enlightenment — Fidget Feed &amp; RedLine" style="left:47.40%;top:51.57%;width:10.94%"></a>
       <a class="hot" href="#NPC-header"           aria-label="Plateau of Sustainability — NPC"     style="left:77.14%;top:24.26%;width:12.40%"></a>
     </div>
     <figcaption>My journey along the Dunning-Kruger effect curve</figcaption>
@@ -168,6 +175,7 @@
   </div>
 
   <article class="proj" id="peak">
+    <img class="face" src="assets/mt_stupid_newsprint.png" alt="">
     <p class="eyebrow">Peak of Mt. Stupid</p>
     <h3 id="memory-audio-header">memory.audio</h3>
     <p class="hook">Built to survive a 12-hour shift. Working the floor at Amazon CLE2, I'd generate
@@ -223,7 +231,65 @@
   </article>
 
   <article class="proj" id="valley">
+    <img class="face" src="assets/despair_newsprint.png" alt="">
     <p class="eyebrow">Valley of Despair</p>
+    <h3 id="scenesprint-header">sceneSprint</h3>
+    <p class="hook">A 24-hour hackathon build that matches your webcam to a famous movie poster —
+      one of my first experiments handing the actual building over to coding agents.</p>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3.6" y1="18.4" x2="21" y2="8"/>
+        <path d="M12 13.2 L8.5 19 L15.5 19 Z" fill="currentColor" stroke="none"/>
+        <circle cx="3.9" cy="18.1" r="1.8" style="fill:var(--magenta);stroke:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Leverage · the move</p>
+        <p>Coding agents. I let AI do the building and had a working computer-vision app running
+          inside 24 hours — scope that would have taken me weeks by hand. The leverage was
+          undeniable.</p>
+      </div>
+    </div>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/>
+        <circle cx="12" cy="12" r="5.5"/>
+        <circle cx="12" cy="12" r="2.1" style="fill:var(--magenta);stroke:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Unintended consequences · the ripple</p>
+        <p>But the speed outran my understanding. The agents had written more of the app than I
+          could hold in my head, and moving that fast bred a dangerous confidence — I felt like I
+          could change anything, instantly, without consequence.</p>
+      </div>
+    </div>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="4" y1="5" x2="20" y2="5"/>
+        <line x1="12" y1="21" x2="12" y2="9"/>
+        <path d="M8 12.5 L12 8.5 L16 12.5" style="stroke:var(--magenta);fill:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Constraint · the wall</p>
+        <!-- SCAFFOLD: aimed at the real lesson (hand-engineered features → learned representation). Crash = the scene; features = the wall. Rewrite in your voice. -->
+        <p>The crash is the story I tell — an hour from the demo, overconfident, I refactored a core
+          component with no rollback and had nothing to show the judges. But the real wall was
+          upstream: the results were weak because I'd hand-picked the features I assumed mattered —
+          pose estimation, color analysis — so the model was only ever as good as my guesses. The fix
+          wasn't better features; it was to stop guessing and let a sparse encoder learn the
+          representation straight from the data. The lesson that stuck: don't impose your model of what
+          matters — let the system reveal it.</p>
+      </div>
+    </div>
+
+    <a class="visit" href="https://github.com/edgesigma/sceneSprint" target="_blank" rel="noopener">View the code ↗</a>
+  </article>
+
+  <article class="proj" id="slope-fidget">
+    <img class="face" src="assets/enlightenment_newsprint.png" alt="">
+    <p class="eyebrow">Slope of Enlightenment</p>
     <h3 id="fidget-feed-header">Fidget Feed</h3>
     <p class="hook">An app blocker that gives back. Instead of just saying "no," it intercepts your
       distracting apps and swaps the scroll for interactive fidgets — the dopamine hit without the
@@ -334,6 +400,7 @@
   </article>
 
   <article class="proj" id="plateau">
+    <img class="face" src="assets/sustainability_newsprint.png" alt="">
     <p class="eyebrow">Plateau of Sustainability</p>
     <h3 id="NPC-header">NPC</h3>
     <p class="hook">An AI-run agency that dispatches real-world work to local street teams and verifies it
@@ -399,9 +466,9 @@
   <h2>Let's build something that <span class="em">actually ships.</span><img class="face-emoji" src="assets/consistency.png" alt=""></h2>
   <a class="mail" href="mailto:hello@mauricewingfield.com">hello@mauricewingfield.com</a>
   <div class="social"><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">X</a><a href="#">Read.cv</a></div>
-  <div class="fine">© 2026 Maurice Wingfield · Cleveland, Ohio</div>
   <img class="face-payoff" src="assets/consistency.png" alt="">
 </footer>
+<div class="ftcopy">© 2026 Maurice Wingfield · Cleveland, Ohio</div>
 
 <script>
   // optional preview toggles: ?bg=RRGGBB recolors the hero field · ?art=full = full-bleed hero

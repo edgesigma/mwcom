@@ -25,7 +25,20 @@
   .eyebrow{font-style:italic;font-family:"Spectral",serif;letter-spacing:.03em;margin:0}
   h1,h2,h3{font-family:"Spectral",serif;font-weight:800;letter-spacing:-.015em;line-height:1}
   .cta{display:inline-block;width:max-content;font-family:"Source Serif 4",serif;font-weight:600;
-       font-size:15px;letter-spacing:.02em;text-decoration:none;padding:13px 22px;border-radius:2px}
+       font-size:15px;letter-spacing:.02em;text-decoration:none;padding:13px 22px;border-radius:2px;
+       border:2px solid transparent}
+
+  /* ============================ STICKY NAV ============================ */
+  .nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;
+       gap:1rem;padding:.85rem 7vw;background:var(--footer-bg);color:var(--cream)}
+  .nav .wordmark{font-family:"Spectral",serif;font-weight:800;font-size:clamp(15px,1.5vw,19px);
+       letter-spacing:-.01em;color:var(--cream);text-decoration:none}
+  .nav .navlinks{display:flex;gap:1.5rem;font-size:14px;letter-spacing:.02em}
+  .nav .navlinks a{color:var(--cream);text-decoration:none;opacity:.82;transition:opacity .12s,color .12s}
+  .nav .navlinks a:hover,.nav .navlinks a:focus-visible{color:var(--cyan);opacity:1;outline:none}
+  .nav .navlinks .resume{color:var(--cyan);opacity:1}   /* résumé = the primary action, highlighted */
+  /* offset anchored jumps so the sticky nav never covers the target */
+  .about,.work,footer.ft2{scroll-margin-top:76px}
 
   /* ============================ HERO (new art on color field, card-right) ============================ */
   .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;justify-content:flex-end;
@@ -39,6 +52,8 @@
   .hero h1{font-size:clamp(42px,6vw,86px);margin:0 0 1.4rem}
   .hero .punch{color:var(--magenta)}
   .hero .cta{background:var(--ink);color:var(--cream)}
+  .hero .cta-row{display:flex;justify-content:flex-end;gap:.8rem;flex-wrap:wrap;margin-top:.2rem}
+  .hero .cta.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
   /* full-bleed variant: art covers the whole hero and overscans past every edge (no magenta) */
   .hero.full{background:var(--ink)}
   .hero.full .bleed{inset:-3vh -2.5vw;border-radius:0}
@@ -71,7 +86,7 @@
   .work .head h2{font-size:clamp(30px,4vw,52px);margin:0}
   .work .proj{max-width:760px;margin:0 auto;padding:3.4vh 0;border-top:1px solid rgba(22,18,14,.18);scroll-margin-top:2rem}
   .work .proj .eyebrow{color:var(--magenta-deep);font-size:14px;margin-bottom:.4rem}
-  .work .proj h3{font-size:clamp(24px,3.2vw,38px);margin:0 0 .8rem;scroll-margin-top:2.5rem}
+  .work .proj h3{font-size:clamp(24px,3.2vw,38px);margin:0 0 .8rem;scroll-margin-top:76px}
   /* bare newsprint face — marginal portrait marking each hotspot-linked station */
   .work .proj .face{float:right;width:clamp(120px,14vw,155px);height:auto;margin:.1rem 0 .8rem 1.6rem}
   .work .proj p{max-width:none;font-size:clamp(16px,1.2vw,19px);line-height:1.6;margin:0;color:var(--ink)}
@@ -134,13 +149,27 @@
 </head>
 <body>
 
+<!-- ===== STICKY NAV ===== -->
+<nav class="nav">
+  <a class="wordmark" href="#hero">Maurice Wingfield</a>
+  <div class="navlinks">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a class="resume" href="#">Résumé</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
 <!-- ===== HERO ===== -->
 <section class="hero" id="hero">
   <div class="bleed"></div>
   <div class="copy">
     <p class="eyebrow">AI is unbundling tech teams.</p>
-    <h1>Product, Engineering & Growth <span class="punch">can do more.</span></h1>
-    <a class="cta" href="#about">From Zero to One →</a>
+    <h1>A Product, Eng & Growth generalist like me <span class="punch">can do&nbsp;more.</span></h1>
+    <div class="cta-row">
+      <a class="cta ghost" href="#">My Resume</a>
+      <a class="cta" href="#about">From Zero to One →</a>
+    </div>
   </div>
 </section>
 
@@ -178,8 +207,7 @@
     <img class="face" src="assets/mt_stupid_newsprint.png" alt="">
     <p class="eyebrow">Peak of Mt. Stupid</p>
     <h3 id="memory-audio-header">memory.audio</h3>
-    <p class="hook">Built to survive a 12-hour shift. Working the floor at Amazon CLE2, I'd generate
-      audio lessons before work and loop them all day to keep my mind alive over the noise.</p>
+    <p class="hook">"Learn anything in a week" was the slogan. Working the floor at Amazon CLE2, I needed something to keep my mind alive during 12 hour shifts. A pile of scripts I had running on my laptop would generate audio lessons before work and I'd loop them all night. Game theory, Information theory, Model of Hierarchical Complexity, Investing - all of the topics that interested me were only a prompt away.</p>
 
     <div class="lens">
       <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -189,10 +217,7 @@
       </svg>
       <div>
         <p class="lbl">Leverage · the move</p>
-        <p>I deployed it. It went from scripts I ran at home to something I could reach from the
-          warehouse floor — and, once I was building in public on X, from an audience of one to
-          ~100 strangers generating their own lessons. One deploy turned a private survival habit
-          into a product.</p>
+        <p>I deployed it. Getting this project online was the first step in a feedback loop we called building in public over on X. Talking about the lightcone, shipping projects, & encouraging one another. The app got about 100 users and I enjoyed looking through the lessons other people were generating for themselves.</p>
       </div>
     </div>
 
@@ -204,11 +229,7 @@
       </svg>
       <div>
         <p class="lbl">Unintended consequences · the ripple</p>
-        <p>Real users pulled it where I never aimed it — a lesson on one specific piece of industrial
-          equipment; someone asking it to teach them about memory.audio itself. Their feedback pulled
-          me deeper: cognitive assessments grounded in memory-science frameworks, then real research
-          into memory span and information theory, then a multi-voice podcast format. Every step made
-          it bigger.</p>
+        <p>The research into memory span and information theory drove feature development. I added cognitive assessments grounded in memory-science frameworks, Then a multi-voice podcast format. The realization that I was making a tool to program my attention. At the peak, memory.audio lessons were the bulk of my information diet and this has compounded.</p>
       </div>
     </div>
 
@@ -220,11 +241,7 @@
       </svg>
       <div>
         <p class="lbl">Constraint · the wall</p>
-        <p>And bigger was the wall. With no business model it was an expensive hobby — OpenAI and GCP
-          bills with nothing coming back — and all that feature-chasing had quietly turned a memory
-          tool into a weaker copy of Google's NotebookLM. The thing I'd optimized away was my only
-          edge: memory, specifically. So the next move isn't a bigger app — it's a focused refactor,
-          memory.audio as a Claude skill, that keeps the specificity and sheds the infrastructure.</p>
+        <p>With no business model it was an expensive hobby and just before the third release, it dawned on me that I was building a worse version of NotebookLM. That's not actually true. There isn't another product focused on training and measuring your memory or intentionally programming your attention. I'm thinking about retooling it as an LLM skill at some point.</p>
       </div>
     </div>
     <span class="visit inactive">No live page</span>
@@ -234,8 +251,7 @@
     <img class="face" src="assets/despair_newsprint.png" alt="">
     <p class="eyebrow">Valley of Despair</p>
     <h3 id="scenesprint-header">sceneSprint</h3>
-    <p class="hook">A 24-hour hackathon build that matches your webcam to a famous movie poster —
-      one of my first experiments handing the actual building over to coding agents.</p>
+    <p class="hook">A 24-hour hackathon project that matches your webcam image to a famous movie poster. This project concretized some of the abstract concepts of ML for me. Also, revealed the biggest risk of relying on coding agents.</p>
 
     <div class="lens">
       <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -246,8 +262,7 @@
       <div>
         <p class="lbl">Leverage · the move</p>
         <p>Coding agents. I let AI do the building and had a working computer-vision app running
-          inside 24 hours — scope that would have taken me weeks by hand. The leverage was
-          undeniable.</p>
+          in a few hours. A learning/building workflow emerged. Leverage the LLM as a thought partner to flesh out the end experience, then take a step back to examine the new domains of knowledge involved. Inquire into the established mental models and frameworks already rooted in that domain. What software solutions have already been published. Then, design the processes required to deliver the end result and only then, write the PRDs. Dispatch work to the agent(s) and carefully merge the pieces into a whole.</p>
       </div>
     </div>
 
@@ -259,9 +274,7 @@
       </svg>
       <div>
         <p class="lbl">Unintended consequences · the ripple</p>
-        <p>But the speed outran my understanding. The agents had written more of the app than I
-          could hold in my head, and moving that fast bred a dangerous confidence — I felt like I
-          could change anything, instantly, without consequence.</p>
+        <p>Fast progress bred a dangerous confidence. I overestimated how tightly coupled the agent was with the codebase. About an hour before the hackathon deadline, I had a (very poor) image matching tool. At the peak of my hubris, I decided to refactor the pipeline to improve the matching quality. Copilot crapped the bed and I spent about twenty minutes crashing out. In the end, I had nothing to show for the brutal 24 hour session.</p>
       </div>
     </div>
 
@@ -273,14 +286,7 @@
       </svg>
       <div>
         <p class="lbl">Constraint · the wall</p>
-        <!-- SCAFFOLD: aimed at the real lesson (hand-engineered features → learned representation). Crash = the scene; features = the wall. Rewrite in your voice. -->
-        <p>The crash is the story I tell — an hour from the demo, overconfident, I refactored a core
-          component with no rollback and had nothing to show the judges. But the real wall was
-          upstream: the results were weak because I'd hand-picked the features I assumed mattered —
-          pose estimation, color analysis — so the model was only ever as good as my guesses. The fix
-          wasn't better features; it was to stop guessing and let a sparse encoder learn the
-          representation straight from the data. The lesson that stuck: don't impose your model of what
-          matters — let the system reveal it.</p>
+        <p>Only in the post-mortem I learned that the image matching results were weak because I'd hand-picked the features based on assumptions (pose estimation & color analysis), so the model was only ever as good as my guesses. I didn't even know what a sparse encoder was nor had I read the bitter lesson at that point. Now I know that the answer is to let the system learn the representation straight from data.</p>
       </div>
     </div>
 
@@ -291,9 +297,7 @@
     <img class="face" src="assets/enlightenment_newsprint.png" alt="">
     <p class="eyebrow">Slope of Enlightenment</p>
     <h3 id="fidget-feed-header">Fidget Feed</h3>
-    <p class="hook">An app blocker that gives back. Instead of just saying "no," it intercepts your
-      distracting apps and swaps the scroll for interactive fidgets — the dopamine hit without the
-      45-minute hole.</p>
+    <p class="hook">App blockers help users manage screen time by blocking distracting apps. It's a crowded but lucrative segment. Taking the advice of more successful builders, I tried not to reinvent the wheel this time around but instead, started with an existing product segment and business model.</p>
 
     <div class="lens">
       <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -303,10 +307,7 @@
       </svg>
       <div>
         <p class="lbl">Leverage · the move</p>
-        <p>I swapped Copilot for Claude Code. The first stretch I built real UI from my Figma mockups
-          with a Copilot agent; switching to Claude Code around March was the inflection point —
-          iteration speed and output jumped hard. Same designer, same app, different tool, and
-          suddenly the build stopped being the bottleneck.</p>
+        <p>Inside Android Studio, the first time I dropped a high fidelity mock into the chat and it generated a functional UI screen was a major unlock. I iterated on the UI design entirely in Figma and built with the agent. Only had to touch the code when Copilot agent had gotten into a loop trying to squash a bug.</p>
       </div>
     </div>
 
@@ -318,10 +319,7 @@
       </svg>
       <div>
         <p class="lbl">Unintended consequences · the ripple</p>
-        <p>This was the first thing I ran like a business, not just shipped. A landing page with lead
-          capture, profiles on Facebook, TikTok, and X, UGC experiments, exhaustive market research,
-          real early-access signups. I set out to build an app and backed into building an entire
-          go-to-market machine — distribution became a second craft.</p>
+        <p>I set out to earn and all I did was learn. Seriously, a year of effort mapped the action-space of product development & GTM. I touched every surface that wasn't code & design (twice).</p>
       </div>
     </div>
 
@@ -333,12 +331,7 @@
       </svg>
       <div>
         <p class="lbl">Constraint · the wall</p>
-        <p>And that's where I learned the constraint had moved. I had the app, the business model, the
-          audience, the leads — but as a solo developer I couldn't coordinate the closed beta Google
-          requires to publish: a dozen real testers, two weeks. The wall wasn't code or product;
-          Claude Code had solved building. The wall was coordinating people — which, it turns out, is
-          exactly the problem worth solving. I've since stood up AppHive to clear that beta, but for
-          now the job search and the hackathon have the clock.</p>
+        <p>The last thing I considered as a builder were the actual human beings I would need to install my app for a 14 day closed beta. I had some idea about the userbase in abstract, but those twelve specific humans were required by Google to get my app into the Play Store.</p>
       </div>
     </div>
     <a class="visit" href="https://fidgetfeed.com" target="_blank" rel="noopener">Visit Fidget Feed ↗</a>
@@ -347,8 +340,7 @@
   <article class="proj" id="slope">
     <p class="eyebrow">Slope of Enlightenment</p>
     <h3 id="RedLine-header">RedLine</h3>
-    <p class="hook">Know before you go. Draw a line around the areas you want to avoid, and every incoming
-      ride offer gets a clear go / no-go signal. I built it because I was the driver who needed it.</p>
+    <p class="hook">At a time punctuated by often fatal violence against rideshare drivers in Cleveland, I was assaulted by a passenger at 2a.m. on a Friday. It could have been much worse, but I was shaken by the experience. Staying present & de-escalating a chaotic situation while adrenaline flooded my brain. Shocked & disappointed with the indifference of local police and the Lyft safety team who attempted to send me back to the very same neighborhood in my next ride offer. RedLine is the feature Lyft would never ship. Drivers can filter ride offers based on geofenced areas they want to avoid.</p>
 
     <div class="lens">
       <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -358,11 +350,7 @@
       </svg>
       <div>
         <p class="lbl">Leverage · the move</p>
-        <p>I built it for myself, in about two days. By now the build wasn't the hard part — the last
-          two projects had turned "idea to working on my phone" from a quarter into a weekend. And
-          because I was the user — a driver with the exact problem — I needed no market research and no
-          beta cohort. Idea, build, and real-world test all happened in my own car, on real ride
-          offers, in days.</p>
+        <p>RedLine is free and has no business model, but I still positioned it to reach as many drivers as possible. Rideshare subreddits put me in contact with the community of rideshare drivers online. The story of its inception was the biggest leverage I discovered. Previous projects were at most a fascination but RedLine has a mission.</p>
       </div>
     </div>
 
@@ -374,10 +362,7 @@
       </svg>
       <div>
         <p class="lbl">Unintended consequences · the ripple</p>
-        <p>Being my own user changed the product. Driving with it, the real constraints — eyes on the
-          road, one-glance decisions — forced a dead-simple go/no-go signal and hands-free voice,
-          features I'd never have speced from a mockup. And because the problem was real, other drivers
-          wanted it without me marketing to them. Usefulness did the distribution the machine couldn't.</p>
+        <p>While the core value proposition is the ride offer filter, in capturing the pick-up and drop-off location to cross-reference with users' geofences, we end up grabbing lots of data about the ride; information that the Lyft driver app doesn't offer drivers. On several occasions, I've referenced the detailed ride logs to clear up issues with customer service. It turns out that this data set is useful for training a ride-scoring feature or some other classifier.</p>
       </div>
     </div>
 
@@ -389,11 +374,7 @@
       </svg>
       <div>
         <p class="lbl">Constraint · the wall</p>
-        <p>Here's what the slope taught me: building had stopped being the constraint. I could ship
-          almost anything now — but a solo, free consumer app has a ceiling no velocity can raise. The
-          limit wasn't my skill; it was the structure. Real leverage doesn't come from building one
-          more app alone — it comes from a system that coordinates people and captures value. That's
-          the whole reason for what came next.</p>
+        <p>It's unlikely that RedLine will be accepted into the Google Play store. By leveraging Android accessibility features, RedLine is able to see the actual UI components of the Lyft app. This worked far better than OCR-ing pixels.</p>
       </div>
     </div>
     <a class="visit" href="https://getredlineapp.com" target="_blank" rel="noopener">Visit RedLine ↗</a>
@@ -403,9 +384,7 @@
     <img class="face" src="assets/sustainability_newsprint.png" alt="">
     <p class="eyebrow">Plateau of Sustainability</p>
     <h3 id="NPC-header">NPC</h3>
-    <p class="hook">An AI-run agency that dispatches real-world work to local street teams and verifies it
-      got done. The one I'm building now — and the one that puts everything the last three projects
-      taught me into a single system.</p>
+    <p class="hook">If we had a programmable network of human actuators, completing any real-world task would be as simple as making an API call. With NPC, I'm exploring what impact AI could have on labor markets. The #BuildWithGemini XPrize hackathon presents an ideal opportunity to make progress on the idea and get distribution.</p>
 
     <div class="lens">
       <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -415,10 +394,7 @@
       </svg>
       <div>
         <p class="lbl">Leverage · the move</p>
-        <p>The move was to stop building tools and build the thing that runs them. In NPC the AI agents
-          do the coordinating and the checking — dispatch a task, a person completes it in the physical
-          world, an agent verifies the proof. I stopped being the single output and started directing a
-          network that produces it. That's the leverage RedLine told me I was missing.</p>
+        <p>The move was to spend less time thinking about software and more time out in the world. I spent less time brainstorming and set out towards a specific outcome; 'what if I could upload an image file and have a human street-team spreading my idea in sticker form all over town'. Then, problem-solving forward, documenting the effort and publishing a video. Several of those tight cycles have driven this project deeper into real-world specificity.</p>
       </div>
     </div>
 
@@ -430,10 +406,7 @@
       </svg>
       <div>
         <p class="lbl">Unintended consequences · the ripple</p>
-        <p>Building it, I found the value wasn't the labor — it was the proof. The layer where AI
-          verifies the work — that a shelf really is out of stock, that the task really happened —
-          turned out to be the product. NPC quietly became less "people who do things" and more a
-          system that produces verified truth about the physical world.</p>
+        <p>Building my way forward and ideating with AI has sharpened the focus from labor to the proof. The hypothesis of the business is that the layer where AI verifies the work (that a shelf really is out of stock, that the task really happened) is actually the product. The focus has become less "people doing things" and more a system that produces verified truth about the physical world.</p>
       </div>
     </div>
 
@@ -445,27 +418,19 @@
       </svg>
       <div>
         <p class="lbl">Constraint · the frontier</p>
-        <p>So the frontier now is trust. For a business to pay for verified truth, the verification has
-          to be right — catch the real problem without crying wolf. Driving that false-positive rate
-          down is the whole game, and it's where the work lives today. The question stopped being "can
-          I build it" and became "can I make it trustworthy enough to bet a business on."</p>
+        <p>The primary constraint is finding real customers for the service. This demands specificity and I'm going deep down the path of retail execution. Preparing for a pilot program while hardening the CV pipeline of the software.</p>
       </div>
     </div>
     <a class="visit" href="https://npc.guide" target="_blank" rel="noopener">Visit NPC ↗</a>
   </article>
 </section>
 
-<!-- ===== BLACK MESSAGING STRIP + FOOTER ===== -->
-<div class="preftr" id="contact">
-  <!-- messaging area — placeholder; use this black strip for a closing line, status, or callout -->
-  Messaging strip — a closing line or callout lives here.
-</div>
-
-<footer class="ft2">
+<!-- ===== FOOTER ===== -->
+<footer class="ft2" id="contact">
   <p class="eyebrow">Have a problem worth pointing at?</p>
   <h2>Let's build something that <span class="em">actually ships.</span><img class="face-emoji" src="assets/consistency.png" alt=""></h2>
-  <a class="mail" href="mailto:hello@mauricewingfield.com">hello@mauricewingfield.com</a>
-  <div class="social"><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">X</a><a href="#">Read.cv</a></div>
+  <a class="mail" href="mailto:yell@mauricewingfield.com">yell@mauricewingfield.com</a>
+  <div class="social"><a href="https://www.linkedin.com/in/mauricewingfield/">LinkedIn</a><a href="https://github.com/edgesigma">GitHub</a><a href="https://x.com/noslugg">X</a><a href="#">Read.cv</a></div>
   <img class="face-payoff" src="assets/consistency.png" alt="">
 </footer>
 <div class="ftcopy">© 2026 Maurice Wingfield · Cleveland, Ohio</div>

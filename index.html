@@ -332,7 +332,8 @@
         <div class="project-grid single-col">
           <div class="project-media">
             <div id="apophis-widget" data-width="600" data-height="400" data-mode="approach"></div>
-            <script src="https://apophiscountdown.com/widget/embed.js"></script>
+            <!-- loaded deferred + self-removing on failure so a downed widget host can never block the page (see perf incident 2026-07) -->
+            <script defer src="https://apophiscountdown.com/widget/embed.js" onerror="this.remove()"></script>
           </div>
           <div class="project-text">
             <p>A personal project with the intention of turning public attention heavenward. 99942 Apophis is an asteroid roughly the size of the Eiffel Tower on course to pass between the Earth and Moon on April 13, 2029. Discovered in 2004, it went from a possible collision threat to confirmed safe, and passed back into obscurity. I suspect for a day or two it will be one of the most discussed stories on the planet. This project is a long-play for that moment of attention.</p>

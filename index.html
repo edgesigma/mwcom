@@ -1,463 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maurice Wingfield — Creative Technologist</title>
-  <meta name="description" content="Creative technologist with 15+ years in web development. I build across platforms; web, mobile, and hardware. Leading with curiosity and a bias towards action." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maurice Wingfield | Builder, Full-Stack Developer, Founder</title>
+<meta name="description" content="Builder who takes products from zero to one across product, engineering, and growth. Recently shipping computer vision, Android, and autonomous-agent products.">
+<link rel="canonical" href="https://mauricewingfield.com/">
+<meta name="theme-color" content="#0E5C63">
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+<!-- Favicons / PWA -->
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Maurice Wingfield",
-    "url": "https://mauricewingfield.com/",
-    "sameAs": [
-      "https://github.com/edgesigma",
-      "https://x.com/noslugg",
-      "mailto:yell@mauricewingfield.com"
-    ],
-    "jobTitle": "Creative Technologist",
-    "description": "Creative technologist with 15+ years in web development. I build across platforms; web, mobile, and hardware. Leading with curiosity and a bias towards action."
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mauricewingfield.com/">
+<meta property="og:title" content="Maurice Wingfield | Builder, Full-Stack Developer, Founder">
+<meta property="og:description" content="Builder who takes products from zero to one across product, engineering, and growth.">
+<meta property="og:image" content="https://mauricewingfield.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maurice Wingfield | Builder, Full-Stack Developer, Founder">
+<meta name="twitter:description" content="Builder who takes products from zero to one across product, engineering, and growth.">
+<meta name="twitter:image" content="https://mauricewingfield.com/assets/og.png">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Maurice Wingfield",
+  "url": "https://mauricewingfield.com/",
+  "jobTitle": "Builder / Full-Stack Developer / Founder",
+  "description": "Builder who takes products from zero to one across product, engineering, and growth.",
+  "sameAs": [
+    "https://github.com/edgesigma",
+    "https://www.linkedin.com/in/mauricewingfield/",
+    "https://x.com/noslugg",
+    "mailto:yell@mauricewingfield.com"
+  ]
+}
+</script>
+
+<!-- Analytics (PostHog) -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var c=e;for(void 0!==a?c=e[a]=[]:a="posthog",c.people=c.people||[],c.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},c.people.toString=function(){return c.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once reset group add_group remove_group track_pageview register unregister get_distinct_id get_property get_feature_flag onFeatureFlags reloadFeatureFlags isFeatureEnabled onFeatureFlag".split(" "),n=0;n<o.length;n++)g(c,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_a94fsl13aOmdJkNocQWfiMvzZjmqhbssuCnDh56PN4u', { api_host: 'https://app.posthog.com' });
+  var env = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'development' : 'production';
+  posthog.register({ env: env });
+</script>
+<!-- Self-hosted subsetted fonts (latin). Hero-critical faces preloaded to kill FOUT. -->
+<link rel="preload" href="assets/webfonts/spectral-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/webfonts/spectral-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/webfonts/source-serif-4-600.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:'Source Serif 4';font-style:normal;font-weight:400;font-display:swap;src:url('assets/webfonts/source-serif-4-400.woff2') format('woff2')}
+  @font-face{font-family:'Source Serif 4';font-style:normal;font-weight:600;font-display:swap;src:url('assets/webfonts/source-serif-4-600.woff2') format('woff2')}
+  @font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:swap;src:url('assets/webfonts/spectral-400-italic.woff2') format('woff2')}
+  @font-face{font-family:'Spectral';font-style:normal;font-weight:600;font-display:swap;src:url('assets/webfonts/spectral-600.woff2') format('woff2')}
+  @font-face{font-family:'Spectral';font-style:normal;font-weight:800;font-display:swap;src:url('assets/webfonts/spectral-800.woff2') format('woff2')}
+  :root{
+    --cream:#F3EAD7; --cream-2:#ECE0C8; --ink:#16120E; --ink-soft:#4A423B;
+    --magenta:#FF0078; --magenta-deep:#C8005E; --cyan:#00C1ED; --cyan-deep:#0A6E82;
+    /* hero / accent fields: swap freely. try #0E5C63 teal · #16120E ink · #E9542B coral */
+    --hero-bg:#FF0078;
+    --footer-bg:#0E5C63;   /* footer field: independent of the hero (warm hero / cool footer) */
   }
-  </script>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;background:var(--footer-bg)}   /* teal canvas so no light hairline peeks below the footer */
+  body{margin:0;font-family:"Source Serif 4",Georgia,serif;color:var(--ink);
+       background:var(--cream) url("assets/ricepaper.webp") repeat}
+  img{max-width:100%;display:block}
+  .tag{position:absolute;top:0;left:0;z-index:60;background:var(--ink);color:var(--cream);
+       font:600 11px/1 "Source Serif 4",serif;letter-spacing:.12em;padding:6px 11px;text-transform:uppercase}
+  .eyebrow{font-style:italic;font-family:"Spectral",serif;letter-spacing:.03em;margin:0}
+  h1,h2,h3{font-family:"Spectral",serif;font-weight:800;letter-spacing:-.015em;line-height:1}
+  .cta{display:inline-block;width:max-content;font-family:"Source Serif 4",serif;font-weight:600;
+       font-size:15px;letter-spacing:.02em;text-decoration:none;padding:13px 22px;border-radius:2px;
+       border:2px solid transparent}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  /* ============================ STICKY NAV ============================ */
+  .nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;
+       gap:1rem;padding:.85rem 7vw;background:var(--footer-bg);color:var(--cream)}
+  .nav .wordmark{font-family:"Spectral",serif;font-weight:800;font-size:clamp(15px,1.5vw,19px);
+       letter-spacing:-.01em;color:var(--cream);text-decoration:none;white-space:nowrap}
+  .nav .navlinks{display:flex;gap:1.5rem;font-size:14px;letter-spacing:.02em}
+  .nav .navlinks a{color:var(--cream);text-decoration:none;opacity:.82;transition:opacity .12s,color .12s}
+  .nav .navlinks a:hover,.nav .navlinks a:focus-visible{color:var(--cyan);opacity:1;outline:none}
+  .nav .navlinks .resume{color:var(--cream);opacity:1}   /* résumé = primary action: full-opacity white, cyan on hover (like the other links) */
+  /* offset anchored jumps so the sticky nav never covers the target */
+  .about,.work,footer.ft2{scroll-margin-top:76px}
 
-  <link rel="stylesheet" href="style.css" />
+  /* ============================ HERO (new art on color field, card-right) ============================ */
+  .hero{position:relative;min-height:calc(100vh - var(--nav-h,56px));min-height:calc(100svh - var(--nav-h,56px));display:flex;align-items:flex-end;justify-content:flex-end;
+        overflow:hidden;background:var(--hero-bg)}
+  .hero .bleed{position:absolute;inset:5vh 4vw;background:url("assets/proto-coarse.png") center 26%/cover no-repeat;
+               border-radius:4px;z-index:0}
+  .hero .copy{position:relative;z-index:10;display:flex;flex-direction:column;justify-content:center;
+              background:var(--cream);color:var(--ink);width:75%;margin:9vh 7vw;
+              padding:2.6rem 2.6rem 2.4rem;border-radius:3px}
+  .hero .eyebrow{color:var(--magenta-deep);font-size:clamp(14px,1.4vw,18px);margin-bottom:1.1rem}
+  .hero h1{font-size:clamp(42px,6vw,86px);margin:0 0 1.4rem}
+  .hero .punch{color:var(--magenta)}
+  .hero .cta{background:var(--ink);color:var(--cream)}
+  .hero .cta-row{display:flex;justify-content:flex-end;gap:.8rem;flex-wrap:wrap;margin-top:.2rem}
+  .hero .cta.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  /* full-bleed variant: art covers the whole hero and overscans past every edge (no magenta) */
+  .hero.full{background:var(--ink)}
+  .hero.full .bleed{inset:-3vh -2.5vw;border-radius:0}
+
+  /* ============================ ABOUT (chart centered + body copy) ============================ */
+  /* transparent so the rice-paper body texture shows through */
+  .about{position:relative;background:transparent;padding:14vh 7vw}
+  .about>*{position:relative}
+  .about .head{max-width:760px;margin:0 auto 3.5rem;text-align:center}
+  .about .eyebrow{color:var(--magenta-deep);font-size:18px;margin-bottom:.8rem}
+  .about h2{font-size:clamp(32px,4.4vw,56px);margin:0}
+  .about figure{margin:0 auto 3.5rem;max-width:820px}
+  .about figure img{width:100%;display:block;border:1px solid rgba(22,18,14,.12);border-radius:4px;background:#fff}
+  /* chart hotspots: percentage overlay so circles scale with the responsive image */
+  .about .chart{position:relative}
+  .about .hot{position:absolute;transform:translate(-50%,-50%);aspect-ratio:1;border-radius:50%;
+              background:transparent;cursor:pointer;transition:box-shadow .15s ease, transform .15s ease}
+  .about .hot:hover,.about .hot:focus-visible{outline:none;transform:translate(-50%,-50%) scale(1.05);
+              box-shadow:0 0 0 4px var(--cyan)}
+  .about figcaption{font-style:italic;font-family:"Spectral",serif;color:var(--ink-soft);
+                    font-size:13px;text-align:center;margin-top:.8rem}
+  .about .prose{max-width:62ch;margin:0 auto;font-size:clamp(17px,1.3vw,20px);line-height:1.62}
+  .about .prose p{margin:0 0 1.3rem}
+  .about .prose .lead{font-family:"Spectral",serif;font-size:1.18em;line-height:1.5}
+
+  /* ============================ WORK (four project blocks) ============================ */
+  .work{padding:6vh 7vw 12vh}
+  .work .head{max-width:760px;margin:0 auto 4vh;text-align:center}
+  .work .head .eyebrow{color:var(--magenta-deep);font-size:18px;margin-bottom:.6rem}
+  .work .head h2{font-size:clamp(30px,4vw,52px);margin:0}
+  .work .proj{max-width:760px;margin:0 auto;padding:3.4vh 0;border-top:1px solid rgba(22,18,14,.18);scroll-margin-top:2rem}
+  .work .proj .eyebrow{color:var(--magenta-deep);font-size:14px;margin-bottom:.4rem}
+  .work .proj h3{font-size:clamp(24px,3.2vw,38px);margin:0 0 .8rem;scroll-margin-top:76px}
+  /* bare newsprint face: marginal portrait marking each hotspot-linked station */
+  .work .proj .face{float:right;width:clamp(120px,14vw,155px);height:auto;margin:.1rem 0 .8rem 1.6rem}
+  .work .proj p{max-width:none;font-size:clamp(16px,1.2vw,19px);line-height:1.6;margin:0;color:var(--ink)}
+  /* project block: context hook + the three systems-thinking lenses (fill the full .proj width) */
+  .work .proj .hook{font-family:"Spectral",serif;font-style:italic;color:var(--ink-soft);
+                    font-size:clamp(17px,1.5vw,21px);line-height:1.45;max-width:none;margin:.2rem 0 1.7rem}
+  .work .lens{display:flex;gap:1rem;max-width:none;margin-top:1.5rem}
+  .work .lens>div{flex:1;min-width:0}
+  .work .lens .ic{flex:none;width:30px;height:30px;color:var(--ink);margin-top:.2rem}
+  .work .lens .lbl{font:600 12px/1 "Source Serif 4",serif;letter-spacing:.13em;text-transform:uppercase;
+                   color:var(--magenta-deep);margin:0 0 .4rem}
+  .work .lens p{margin:0;max-width:none;font-size:clamp(15px,1.15vw,18px);line-height:1.55;color:var(--ink)}
+  /* project link: cyan as the interactive accent (deep cyan text, bright-cyan underline) */
+  .work .proj .visit{display:block;width:max-content;margin:1.9rem 0 0 auto;font-family:"Source Serif 4",serif;font-weight:600;
+     font-size:15px;letter-spacing:.02em;color:var(--cyan-deep);text-decoration:none;
+     border-bottom:2px solid var(--cyan);padding:1px 4px 3px;transition:background .13s ease,color .13s ease}
+  .work .proj .visit:hover,.work .proj .visit:focus-visible{outline:none;color:var(--ink);background:rgba(18,181,240,.15)}
+  /* inactive link: no live page (grayed, non-interactive) */
+  .work .proj .visit.inactive{color:rgba(22,18,14,.4);border-bottom-color:rgba(22,18,14,.2);pointer-events:none}
+
+  /* ============================ FOOTER ============================ */
+  footer a{color:inherit;text-decoration:none}
+  footer a:hover{color:var(--cyan)}   /* cyan = interaction; reads as a brighten on the teal field */
+
+  /* black messaging strip: separates the page from the footer; usable for a closing line / callout */
+  .preftr{background:var(--ink);color:var(--cream);padding:2.25rem 7vw;
+          font-family:"Spectral",serif;font-style:italic;font-size:clamp(16px,1.7vw,23px);line-height:1.4}
+
+  /* big-type CTA on the color field */
+  .ft2{background:var(--footer-bg);color:var(--cream);padding:9vh 7vw;position:relative;overflow:hidden}
+  .ft2.light{color:var(--ink)}                       /* for light footer grounds (cyan/cream) */
+  .ft2.light .mail{border-bottom-color:var(--ink)}
+  /* footer face treatments (from the DK-chart portraits) */
+  .ft2 .face-payoff{position:absolute;right:3vw;bottom:3vh;width:clamp(200px,26vw,380px);z-index:0;
+                    pointer-events:none;filter:drop-shadow(0 10px 26px rgba(0,0,0,.28))}
+  .ft2 .face-emoji{display:none;height:.86em;width:auto;vertical-align:-.2em;margin-left:.1em}
+  .ft2 h2,.ft2 .eyebrow,.ft2 .mail,.ft2 .social,.ft2 .fine{position:relative;z-index:1}
+  .ft2 .eyebrow{font-size:17px;opacity:.85;margin-bottom:1rem}
+  .ft2 h2{font-size:clamp(40px,7vw,104px);line-height:.95;margin:0 0 2rem;max-width:16ch}
+  .ft2 h2 .em{font-style:italic;font-weight:600}
+  .ft2 .mail{font-family:"Spectral",serif;font-style:italic;font-size:clamp(20px,2.4vw,32px);
+             border-bottom:2px solid var(--cream);padding-bottom:3px}
+  .ft2 .social{display:flex;gap:1.6rem;margin-top:3rem;font-size:15px;letter-spacing:.03em;opacity:.9}
+  .ft2 .fine{margin-top:4rem;font-size:12px;letter-spacing:.04em;opacity:.7}
+  /* copyright: its own strip below the footer so it always clears the face */
+  .ftcopy{background:var(--footer-bg);color:rgba(243,234,215,.6);
+          padding:.2rem 7vw 2.6rem;font-size:12px;letter-spacing:.04em;
+          margin-top:-1px}   /* overlap the footer to kill the sub-pixel seam */
+
+  @media(max-width:820px){
+    /* card sized to content (not stretched), centered, art breathing above & below */
+    .hero{justify-content:center;align-items:flex-end}   /* card sits toward the bottom, with a gap below it */
+    .hero .bleed{background-position:left 26%}   /* keep the left-most figure in frame */
+    .hero .copy{max-width:none;width:auto;margin:7vh 6vw;padding:2.2rem 1.9rem}   /* bottom margin = visible gap below the card */
+    /* CTAs stack full-width (within the copy card's padding) on mobile */
+    .hero .cta-row{flex-direction:column;align-items:stretch;gap:.7rem}
+    .hero .cta-row .cta{width:100%;text-align:center}
+    /* footer face: shrink + tuck into the corner so it clears the links on small screens */
+    .ft2 .face-payoff{width:90px;right:5vw;bottom:3vh}
+    .ft2 .social{margin-bottom:8rem}   /* clearance so the bottom-anchored face sits below the links */
+  }
+  /* small phones: shrink the nav so the wordmark + links fit one row without horizontal overflow */
+  @media(max-width:560px){
+    .nav{padding:.7rem 4.5vw;gap:.5rem}
+    .nav .wordmark{font-size:13.5px}
+    .nav .navlinks{gap:.7rem;font-size:11.5px}
+  }
+</style>
 </head>
 <body>
 
-  <!-- ==================== HERO ==================== -->
-  <header id="hero">
-    <div class="hero-photo" id="hero-photo"></div>
-    <div class="hero-content">
-      <h1>Maurice Wingfield</h1>
-      <p class="hero-tagline">I build interactive digital experiences to foster deeper connections between people, culture, and their environment.</p>
-      <div class="hero-links">
-        <a href="https://github.com/edgesigma" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
-        </a>
-        <a href="https://x.com/noslugg" target="_blank" rel="noopener" aria-label="X (Twitter)">
-          <svg width="24" height="24" viewBox="0 0 128 128" fill="currentColor"><path d="M75.916 54.2L122.542 0h-11.05L71.008 47.06L38.672 0H1.376l48.898 71.164L1.376 128h11.05L55.18 78.303L89.328 128h37.296L75.913 54.2ZM60.782 71.79l-4.955-7.086l-39.42-56.386h16.972L65.19 53.824l4.954 7.086l41.353 59.15h-16.97L60.782 71.793Z"/></svg>
-        </a>
-        <a href="mailto:yell@mauricewingfield.com" class="hero-email">yell@mauricewingfield.com</a>
+<!-- ===== STICKY NAV ===== -->
+<nav class="nav">
+  <a class="wordmark" href="#hero">Maurice Wingfield</a>
+  <div class="navlinks">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+    <a class="resume" href="Maurice-Wingfield-Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="bleed"></div>
+  <div class="copy">
+    <p class="eyebrow">AI is unbundling tech teams.</p>
+    <h1>A Product, Eng & Growth generalist like me <span class="punch">can do&nbsp;more.</span></h1>
+    <div class="cta-row">
+      <a class="cta ghost" href="Maurice-Wingfield-Resume.pdf" target="_blank" rel="noopener">My Resume</a>
+      <a class="cta" href="#about">From Zero to One →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="head">
+    <p class="eyebrow">About</p>
+    <h2>Going zero to one with AI engineering</h2>
+  </div>
+  <figure>
+    <div class="chart">
+      <img loading="lazy" decoding="async" src="assets/dunning-kruger_FINAL.webp" alt="Dunning-Kruger effect curve with a portrait marking each of the four project stations">
+      <a class="hot" href="#memory-audio-header" aria-label="Peak of Mt. Stupid: memory.audio" style="left:22.34%;top:28.52%;width:10.42%"></a>
+      <a class="hot" href="#scenesprint-header"  aria-label="Valley of Despair: sceneSprint"     style="left:29.84%;top:66.48%;width:10.52%"></a>
+      <a class="hot" href="#fidget-feed-header"    aria-label="Slope of Enlightenment: Fidget Feed &amp; RedLine" style="left:47.40%;top:51.57%;width:10.94%"></a>
+      <a class="hot" href="#NPC-header"           aria-label="Plateau of Sustainability: NPC"     style="left:77.14%;top:24.26%;width:12.40%"></a>
+    </div>
+    <figcaption>My journey along the Dunning-Kruger effect curve</figcaption>
+  </figure>
+  <!-- PLACEHOLDER COPY: 2 paragraphs; this space is reserved for context under the chart -->
+  <div class="prose">
+    <p class="lead">More than a list of projects, this page has become a map of my journey from novice to expert in the new domain of AI Engineering.</p>
+    <p>After more than 15 years in tech roles, I became a novice once again back in January of 2025. Driven by curiosity and stubbornness, I've emerged out the other end with an entirely new skill stack.</p>
+  </div>
+</section>
+
+<!-- ===== WORK: four project blocks (rough) ===== -->
+<section class="work" id="work">
+  <div class="head">
+    <p class="eyebrow">The work</p>
+    <h2>A story in four parts</h2>
+  </div>
+
+  <article class="proj" id="peak">
+    <img loading="lazy" decoding="async" class="face" src="assets/mt_stupid_newsprint.webp" alt="">
+    <p class="eyebrow">Peak of Mt. Stupid</p>
+    <h3 id="memory-audio-header">memory.audio</h3>
+    <p class="hook">"Learn anything in a week" was the pitch. Working the floor at Amazon's CLE2 warehouse, I needed something to keep my mind alive through 12-hour shifts, so I built it: an app that generated audio lessons on whatever I was chasing (game theory, information theory, the Model of Hierarchical Complexity, investing) and looped them all night. My first AI-built app, and the first thing I shipped to strangers.</p>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3.6" y1="18.4" x2="21" y2="8"/>
+        <path d="M12 13.2 L8.5 19 L15.5 19 Z" fill="currentColor" stroke="none"/>
+        <circle cx="3.9" cy="18.1" r="1.8" style="fill:var(--magenta);stroke:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Leverage · the move</p>
+        <p>I deployed it, and building in public on X turned a private habit into a product. It reached about 100 people generating their own lessons. Getting it online was the real unlock: the audience became the engine that pulled the next round of features forward.</p>
       </div>
     </div>
-    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    </a>
-  </header>
 
-  <!-- ==================== ABOUT ==================== -->
-  <main>
-    <section id="about">
-      <div class="section-inner">
-        <h2>About</h2>
-        <div class="about-content">
-          <div class="about-photo">
-            <img src="https://storage.googleapis.com/mwcom-media/img/pfp/tf_lite_recognition.png" alt="Object detection with OpenCV on Raspberry Pi" />
-            <span class="about-photo-caption">Object Detection with OpenCV on Raspberry Pi, 2022</span>
-          </div>
-          <p>I'm a creative technologist with 15+ years of experience in web development. Self-taught, I lead with curiosity, a bias towards action, and a need to get my hands dirty learning by doing.</p>
-          <p>The result is a broad functional knowledge base, a couple pillars of domain expertise, and proficiency with AI tools to go deep on a per-project basis.</p>
-          <p>As a former board member at <a href="https://934gallery.org/" target="_blank" rel="noopener">934 Gallery</a>, I understand cultural institutions from the inside: the budgets, the missions, the balance between public experience and operational reality. I've built interactive exhibits, originated youth programs, and managed the kind of cross-functional work that small teams require.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== PROJECTS ==================== -->
-    <section id="projects">
-      <div class="section-inner">
-        <h2>Projects</h2>
-      </div>
-    </section>
-
-    <!-- diagram-tour -->
-    <section class="project" id="diagram-tour">
-      <div class="project-header">
-        <h3>diagram-tour</h3>
-        <span class="project-type">Claude Code Skill</span>
-      </div>
-      <div class="project-body">
-        <div class="feature-video">
-          <a href="https://github.com/centraltowerlabs/diagram-tour" target="_blank" rel="noopener">
-            <img src="https://raw.githubusercontent.com/centraltowerlabs/diagram-tour/main/examples/agent-architecture/poster.png" alt="diagram-tour example: AI agent architecture tour poster frame" />
-          </a>
-        </div>
-        <p class="media-caption">A 3-minute tour of a generic Claude-style AI agent architecture, generated by diagram-tour. Click to view the repo on GitHub.</p>
-        <div class="project-grid single-col">
-          <div class="project-text">
-            <p>A Claude Code skill that turns any codebase into a narrated architecture-tour video. "Explain this codebase" yields a ~6 minute MP4 walking through the project cluster by cluster, with arrows and highlights synced to the narration. It generalizes beyond code; the same pipeline works on any complex system or process you can describe as a directed graph.</p>
-            <p><strong>How it works:</strong> A four-stage pipeline; analyze the repo, generate a Graphviz <code>.dot</code> diagram, write a markdown narration script, render with Piper TTS and a deterministic ffmpeg overlay chain. Each expensive step is gated by a confirmation prompt so the diagram and narration can be refined in plain English before committing to a render. A per-sentence content-addressable voice cache keeps iteration fast.</p>
-            <p>I built diagram-tour because working with agents pushes my mental model of a project ahead of my ability to review what gets produced; a narrated tour forces a cohesive top-down explanation that I (and collaborators) can replay anytime. Open-sourced under <a href="https://github.com/centraltowerlabs" target="_blank" rel="noopener">Central Tower Labs</a>.</p>
-            <div class="project-tech">
-              <span>Claude Code Skills</span>
-              <span>Python</span>
-              <span>Graphviz</span>
-              <span>Piper TTS</span>
-              <span>ffmpeg</span>
-              <span>Agent Tooling</span>
-            </div>
-            <a href="https://github.com/centraltowerlabs/diagram-tour" target="_blank" rel="noopener" class="project-link">View on GitHub</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RedLine -->
-    <section class="project" id="redline">
-      <div class="project-header">
-        <h3>RedLine</h3>
-        <span class="project-type">Android App</span>
-      </div>
-      <div class="project-body">
-        <div class="project-grid two-col">
-          <div class="project-text">
-            <p>RedLine is a safety app for Lyft drivers currently in closed beta.</p>
-            <p><strong>The story:</strong> I was assaulted by a passenger on 3/13/26. The cops said it was one of the most dangerous neighborhoods in America. After filing a report — the police wouldn't even enter to check it out — the very next ride Lyft matched me with would have taken me back to the very same place. So I made this app to put driver safety first.</p>
-            <p><strong>Product:</strong> Drivers mark zones to avoid on the map — freehand, by box, or by whole-city boundary. Every incoming ride offer is checked against those zones in real time, with a clear alert when pickup or dropoff falls in a no-go area.</p>
-            <a href="https://getredlineapp.com" target="_blank" rel="noopener" class="project-link">Get Early Access</a>
-          </div>
-          <div class="project-media">
-            <div class="redline-screens">
-              <figure>
-                <img src="https://getredlineapp.com/demo_zonemap.png" alt="RedLine zone map" />
-                <figcaption>Zone Map: drivers mark avoidance areas freehand, by box, or by city boundary.</figcaption>
-              </figure>
-              <figure>
-                <img src="https://getredlineapp.com/demo_gosignal.png" alt="Go signal" />
-                <figcaption>Go signal when the route is clear of marked zones.</figcaption>
-              </figure>
-              <figure>
-                <img src="https://getredlineapp.com/demo_nogo.png" alt="No-go alert" />
-                <figcaption>No-go alert when pickup or dropoff falls in a zone.</figcaption>
-              </figure>
-              <figure>
-                <img src="https://getredlineapp.com/demo_dashboard.png" alt="Driver dashboard" />
-                <figcaption>Driver dashboard with per-session metrics.</figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Fidget Feed -->
-    <section class="project" id="fidget-feed">
-      <div class="project-header">
-        <h3>Fidget Feed</h3>
-        <span class="project-type">Android App</span>
-      </div>
-      <div class="project-body">
-        <div class="project-grid two-col">
-          <div class="project-text">
-            <p class="project-problem"><strong>The problem:</strong> The average person picks up their phone 96 times a day. Most screen-time solutions fight human behavior head-on; blocking apps and hoping willpower handles the rest. After quitting Instagram cold turkey, I found myself picking up my phone throughout the day and just staring at the empty space the icon used to be. Just staring at the phone with nothing to do. That was the seed of the Fidget Feed user experience; a tappable, swipable UI playground with haptic feedback. An attempt to give my brain the dopamine it craved without all the distraction of algorithmic feeds.</p>
-            <p><strong>Product:</strong> Using Sensor Tower for market analysis and social media communities for user research, I validated the concept and developed a distinct name and design language. Fidget Feed is a two-word domain that describes the product in the simplest terms.</p>
-            <p><strong>Design:</strong> Instead of stopping users dead in their tracks, I designed an alternate feed of low-cognitive-load fidget widgets. Figma explorations took the feed and onboarding through multiple iterations. The breakthrough: the best way to communicate the experience is to put live interactive widgets front and center in onboarding; better shown than described.</p>
-            <p><strong>Tech:</strong> Built natively in Android Studio with coding agents as a core part of the workflow. Starting with GitHub Copilot Agent taught me the fundamentals of context engineering. Moving to Claude Code with the Opus 4.5 release was a step change in agent capability.</p>
-            <p><strong>Where it is now:</strong> Entering beta, the final step before applying for the Google Play Store.</p>
-            <div class="project-tech">
-              <span>Android</span>
-              <span>Kotlin</span>
-              <span>Figma</span>
-              <span>Market Analysis</span>
-              <span>Product Design</span>
-              <span>Context Engineering</span>
-            </div>
-            <a href="https://fidgetfeed.com" target="_blank" rel="noopener" class="project-link">Join the Beta</a>
-          </div>
-          <div class="project-media">
-            <div class="video-container">
-              <video id="fidget-player" autoplay loop muted playsinline
-                src="https://storage.googleapis.com/mwcom-media/fidget-video/clicky-wheel-cropped-captioned.mp4">
-              </video>
-            </div>
-            <p class="media-caption" id="fidget-caption">Clicky Wheel: a satisfying rotary fidget with haptic clicks.</p>
-
-            <div class="carousel-wrapper">
-              <button class="carousel-arrow left" aria-label="Scroll left">&#8249;</button>
-              <div class="gallery-carousel" id="fidget-carousel">
-                <div class="thumb-item active-thumb">
-                  <video src="https://storage.googleapis.com/mwcom-media/fidget-video/clicky-wheel-cropped-captioned.mp4" muted loop class="thumb-video active"
-                    data-video="https://storage.googleapis.com/mwcom-media/fidget-video/clicky-wheel-cropped-captioned.mp4"
-                    data-caption="Clicky Wheel: a satisfying rotary fidget with haptic clicks."></video>
-                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
-                </div>
-                <div class="thumb-item">
-                  <video src="https://storage.googleapis.com/mwcom-media/fidget-video/dial-block-cropped.mp4" muted loop class="thumb-video"
-                    data-video="https://storage.googleapis.com/mwcom-media/fidget-video/dial-block-cropped.mp4"
-                    data-caption="Dial Block: rotary dial interaction with resistance feedback."></video>
-                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
-                </div>
-                <div class="thumb-item">
-                  <video src="https://storage.googleapis.com/mwcom-media/fidget-video/magnetic-tile-cropped.mp4" muted loop class="thumb-video"
-                    data-video="https://storage.googleapis.com/mwcom-media/fidget-video/magnetic-tile-cropped.mp4"
-                    data-caption="Magnetic Tile: snap-to-grid tile sliding."></video>
-                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
-                </div>
-                <div class="thumb-item">
-                  <video src="https://storage.googleapis.com/mwcom-media/fidget-video/some-chords-cropped.mp4" muted loop class="thumb-video"
-                    data-video="https://storage.googleapis.com/mwcom-media/fidget-video/some-chords-cropped.mp4"
-                    data-caption="Some Chords: strum guitar chords with a swipe."></video>
-                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
-                </div>
-                <div class="thumb-item">
-                  <video src="https://storage.googleapis.com/mwcom-media/fidget-video/tap-typing-cropped.mp4" muted loop class="thumb-video"
-                    data-video="https://storage.googleapis.com/mwcom-media/fidget-video/tap-typing-cropped.mp4"
-                    data-caption="Tap Typing: typewriter-style key tapping."></video>
-                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
-                </div>
-                <div class="thumb-item">
-                  <video src="https://storage.googleapis.com/mwcom-media/fidget-video/trapped-bead-cropped.mp4" muted loop class="thumb-video"
-                    data-video="https://storage.googleapis.com/mwcom-media/fidget-video/trapped-bead-cropped.mp4"
-                    data-caption="Trapped Bead: guide a bead through a maze by tilting."></video>
-                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
-                </div>
-                <div class="thumb-item">
-                  <video src="https://storage.googleapis.com/mwcom-media/fidget-video/bubble_preview/bubble-combined.mp4" muted loop class="thumb-video"
-                    data-video="https://storage.googleapis.com/mwcom-media/fidget-video/bubble_preview/bubble-combined.mp4"
-                    data-caption="Bubble Pop: tap to pop satisfying bubbles."></video>
-                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
-                </div>
-              </div>
-              <button class="carousel-arrow right" aria-label="Scroll right">&#8250;</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 934 Gallery -->
-    <section class="project" id="gallery">
-      <div class="project-header">
-        <h3>Digital Garage + 934 Gallery</h3>
-        <span class="project-type">Interactive Art</span>
-      </div>
-      <div class="project-body">
-        <div class="feature-video">
-          <video loop muted playsinline
-            src="https://storage.googleapis.com/mwcom-media/img/vid/cbus_cityTV.mp4">
-          </video>
-        </div>
-        <div class="project-grid two-col">
-          <div class="project-text">
-            <p>In 2022, I joined the board of <a href="https://934gallery.org/" target="_blank" rel="noopener">934 Gallery</a>, a beloved art gallery in the Milo Grogan neighborhood of Columbus, Ohio. That summer, while volunteering for Mural Fest, the gallery's annual fundraiser, Liz Martin, then board president, accepted my proposal to reclaim an unused garage space and turn it into a digital-focused art space. I built exhibits using vision tracking systems, projection mapping with Touchdesigner, and hand-made LED panel installations. Visitors walk into a room and the art responds to their movement.</p>
-            <p>That first collaboration led to a <a href="https://citypulsecolumbus.com/maurice-wingfield-curates-digital-first-gallery/" target="_blank" rel="noopener">Columbus City Pulse feature</a> and a Columbus Arts Council grant to create the 934 Digital Garage Youth Summer Design Thinking Camp, a free five-week STEM camp for 12 Columbus City Schools high schoolers. Students created 2D animations in Pencil and 3D models in Blender, then used Touchdesigner to build an immersive projection-based art piece; their final experience design project, unveiled at an opening reception during Mural Fest. Every student kept their tech kit at the end.</p>
-            <div class="partner-logo">
-              <img src="https://storage.googleapis.com/mwcom-media/img/COSI_science_museum_logo.svg" alt="COSI logo" />
-            </div>
-            <p>The following year, I partnered with COSI to develop a four-week Systems Thinking STEAM module for their Platform Program. Students learned the four modes of systems thinking; making distinctions, seeing cause and effect, understanding parts and wholes, and taking perspectives, through hands-on art making with a different guest creator each week: Allan Pichardo (software developer and digital musician), Krista Faist (art educator), Jayce (AI artist and workshop facilitator), and Dom Deshawn (Columbus-based performer).</p>
-            <div class="project-tech">
-              <span>Computer Vision</span>
-              <span>Touchdesigner</span>
-              <span>Projection Mapping</span>
-              <span>LED Hardware</span>
-              <span>STEAM Education</span>
-              <span>Systems Thinking</span>
-            </div>
-          </div>
-          <div class="project-media">
-            <div class="video-container">
-              <video id="gallery-player" autoplay loop muted playsinline
-                src="https://storage.googleapis.com/mwcom-media/img/vid/blood_pool.mp4">
-              </video>
-            </div>
-            <p class="media-caption" id="gallery-caption">Untitled: In the Garage east room, visitors enter a cold dark space. The vision system tracks the movement of their right hand only.</p>
-
-            <div class="carousel-wrapper">
-              <button class="carousel-arrow left" aria-label="Scroll left">&#8249;</button>
-              <div class="gallery-carousel" id="gallery-carousel-1">
-                <div class="thumb-item">
-                  <img src="https://storage.googleapis.com/mwcom-media/img/vid/blood-swirl.png" class="active"
-                    data-video="https://storage.googleapis.com/mwcom-media/img/vid/blood_pool.mp4"
-                    data-caption="Untitled: In the Garage east room, visitors enter a cold dark space. The vision system tracks the movement of their right hand only."
-                    alt="Blood swirl installation" />
-                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
-                </div>
-                <div class="thumb-item">
-                  <img src="https://storage.googleapis.com/mwcom-media/img/vid/air-pixels.png"
-                    data-video="https://storage.googleapis.com/mwcom-media/img/vid/2400C9CA-20F2-4242-AE45-A0A1C41D52DA.MOV"
-                    data-caption="Untitled: Rear projected onto the front windows of the main gallery. Video collage."
-                    alt="Air pixels projection" />
-                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
-                </div>
-                <div class="thumb-item">
-                  <img src="https://storage.googleapis.com/mwcom-media/img/vid/ocean.png"
-                    data-video="https://storage.googleapis.com/mwcom-media/img/vid/ocean_of_eyes_A.mp4"
-                    data-caption="Ocean of Eyes: In the west room of the Digital Garage. Hand-made LED panel installation."
-                    alt="Ocean of Eyes LED panels" />
-                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
-                </div>
-                <div class="thumb-item">
-                  <img src="https://storage.googleapis.com/mwcom-media/img/468962380_18484882192013456_2019320553203877550_n.jpg"
-                    data-video="https://storage.googleapis.com/mwcom-media/img/vid/0000000001.MOV"
-                    data-caption="Work in progress: First stitched video projection on the front windows after application of projection film."
-                    alt="Window projection" />
-                  <span class="play-badge"><svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg></span>
-                </div>
-              </div>
-              <button class="carousel-arrow right" aria-label="Scroll right">&#8250;</button>
-            </div>
-
-            <div class="gallery-photos">
-              <img src="https://storage.googleapis.com/mwcom-media/img/touch_designer.png" alt="Touchdesigner spatial mapping" />
-              <img src="https://storage.googleapis.com/mwcom-media/img/934_summer_camp.png" alt="Student workstations" />
-            </div>
-            <div class="gallery-photos-captions">
-              <p class="media-caption">Touchdesigner used to map a volume of virtual space to the real space of the Garage.</p>
-              <p class="media-caption">Student workstations set up before a session.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Apophis Countdown -->
-    <section class="project" id="apophis">
-      <div class="project-header">
-        <h3>Apophis Countdown</h3>
-        <span class="project-type">Web App</span>
-      </div>
-      <div class="project-body">
-        <div class="project-grid single-col">
-          <div class="project-media">
-            <div id="apophis-widget" data-width="600" data-height="400" data-mode="approach"></div>
-            <!-- loaded deferred + self-removing on failure so a downed widget host can never block the page (see perf incident 2026-07) -->
-            <script defer src="https://apophiscountdown.com/widget/embed.js" onerror="this.remove()"></script>
-          </div>
-          <div class="project-text">
-            <p>A personal project with the intention of turning public attention heavenward. 99942 Apophis is an asteroid roughly the size of the Eiffel Tower on course to pass between the Earth and Moon on April 13, 2029. Discovered in 2004, it went from a possible collision threat to confirmed safe, and passed back into obscurity. I suspect for a day or two it will be one of the most discussed stories on the planet. This project is a long-play for that moment of attention.</p>
-            <p><strong>What I built:</strong> An educational countdown site with a 3D interactive orbital viewer, a public REST API for developers, and a content strategy built around structured data and SEO.</p>
-            <div class="project-tech">
-              <span>Three.js</span>
-              <span>REST API</span>
-              <span>SEO</span>
-              <span>Structured Data</span>
-            </div>
-            <a href="https://apophiscountdown.com" target="_blank" rel="noopener" class="project-link">Visit Apophis Countdown</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- memory.audio -->
-    <section class="project" id="memory-audio">
-      <div class="project-header">
-        <h3>memory.audio</h3>
-        <span class="project-type">Web App</span>
-      </div>
-      <div class="project-body">
-        <div class="project-grid two-col">
-          <div class="project-text">
-            <p>As I dove into the AI state of the art in early 2025, I built memory.audio to learn how to leverage LLMs to deliver real value to users. The app takes a single plain-English prompt and generates a 4–5 minute audio lesson on practically any subject.</p>
-            <p>Building in public on X, the app drew about a hundred users who provided feedback. A second iteration added rudimentary cognitive assessments; memory baselines users could track over time. A third added two-party conversation-style podcasts to complement the rote-repetition lessons. At that point, I realized I was recreating Google NotebookLM and decided to retire the project. The cognitive assessment angle still has legs; I expect to revisit it.</p>
-            <p><strong>Tech:</strong> What started as scripts on my laptop became a fully deployed web app powered by OpenAI's completion API and Google Cloud Text-to-Speech. The project has since been taken offline.</p>
-            <div class="project-tech">
-              <span>OpenAI API</span>
-              <span>GCP Text-to-Speech</span>
-              <span>Prompt Engineering</span>
-              <span>API Chaining</span>
-            </div>
-            <span class="project-link disabled">Currently offline</span>
-          </div>
-          <div class="project-media">
-            <img src="https://storage.googleapis.com/mwcom-media/img/memory-audio_cartridge_C.png" alt="memory.audio cartridge" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== TECHNOLOGIES ==================== -->
-    <section id="technologies">
-      <div class="section-inner">
-        <h2>Technologies</h2>
-
-        <div class="tech-agents">
-          <h3>Agentic Engineering</h3>
-          <p>I build with coding agents as a core part of my workflow; not as a crutch, but as a multiplier that lets me move faster across unfamiliar stacks.</p>
-          <div class="agent-tools">
-            <div class="agent-tool">
-              <strong>Claude Code</strong>
-              <span>Max subscriber (5x). My primary coding agent, used deeply in Android Studio for Fidget Feed development. Architectural decisions, debugging, and rapid prototyping across Kotlin, JS, and Python.</span>
-            </div>
-            <div class="agent-tool">
-              <strong>GitHub Copilot Agent</strong>
-              <span>Used inside VS Code with a range of models. Day-to-day code generation, refactoring, and exploration across web and API projects.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="tech-grid">
-          <div class="tech-category">
-            <h3>Languages</h3>
-            <ul>
-              <li>JavaScript</li>
-              <li>Python</li>
-              <li>Kotlin</li>
-              <li>HTML / CSS</li>
-            </ul>
-          </div>
-          <div class="tech-category">
-            <h3>Cloud & Infrastructure</h3>
-            <ul>
-              <li>AWS (Lambda, S3)</li>
-              <li>DigitalOcean</li>
-              <li>Azure</li>
-              <li>Linux / Nginx</li>
-            </ul>
-          </div>
-          <div class="tech-category">
-            <h3>Tools & Frameworks</h3>
-            <ul>
-              <li>Node.js</li>
-              <li>Android SDK</li>
-              <li>Three.js</li>
-              <li>OpenAI / GCP APIs</li>
-            </ul>
-          </div>
-          <div class="tech-category">
-            <h3>Hardware & Physical</h3>
-            <ul>
-              <li>Computer Vision</li>
-              <li>Touchdesigner</li>
-              <li>Projection Mapping</li>
-              <li>LED Panel Systems</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ==================== FOOTER / CONTACT ==================== -->
-  <footer id="contact">
-    <div class="footer-inner">
-      <h2>Get in touch</h2>
-      <div class="contact-links">
-        <a href="mailto:yell@mauricewingfield.com">yell@mauricewingfield.com</a>
-        <a href="https://github.com/edgesigma" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
-        </a>
-        <a href="https://x.com/noslugg" target="_blank" rel="noopener" aria-label="X (Twitter)">
-          <svg width="24" height="24" viewBox="0 0 128 128" fill="currentColor"><path d="M75.916 54.2L122.542 0h-11.05L71.008 47.06L38.672 0H1.376l48.898 71.164L1.376 128h11.05L55.18 78.303L89.328 128h37.296L75.913 54.2ZM60.782 71.79l-4.955-7.086l-39.42-56.386h16.972L65.19 53.824l4.954 7.086l41.353 59.15h-16.97L60.782 71.793Z"/></svg>
-        </a>
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/>
+        <circle cx="12" cy="12" r="5.5"/>
+        <circle cx="12" cy="12" r="2.1" style="fill:var(--magenta);stroke:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Unintended consequences · the ripple</p>
+        <p>Chasing the idea pulled me into real research (memory span, information theory), and that research drove the build: cognitive assessments grounded in memory-science frameworks, then a multi-voice podcast format. Somewhere in there I realized I'd built a tool to program my own attention. memory.audio lessons became the bulk of my information diet, and it compounded.</p>
       </div>
     </div>
-    <canvas id="grid"></canvas>
-  </footer>
 
-  <!-- Scripts -->
-  <script src="scripts.js"></script>
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="4" y1="5" x2="20" y2="5"/>
+        <line x1="12" y1="21" x2="12" y2="9"/>
+        <path d="M8 12.5 L12 8.5 L16 12.5" style="stroke:var(--magenta);fill:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Constraint · the wall</p>
+        <p>The real wall was economics: with no business model, it stayed an expensive hobby. I briefly wrote it off as "a worse NotebookLM," but that's wrong. Nothing else trains and measures your memory or deliberately shapes your attention; the specificity was the edge. I just hadn't built a way to capture value from it. A focused retool as an LLM skill is on the list.</p>
+      </div>
+    </div>
+    <span class="visit inactive">No live page</span>
+  </article>
+
+  <article class="proj" id="valley">
+    <img loading="lazy" decoding="async" class="face" src="assets/despair_newsprint.webp" alt="">
+    <p class="eyebrow">Valley of Despair</p>
+    <h3 id="scenesprint-header">sceneSprint</h3>
+    <p class="hook">A 24-hour hackathon build that matches your webcam to a famous movie poster. It's where abstract ML got concrete for me, and where I learned the sharpest lesson about building with coding agents.</p>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3.6" y1="18.4" x2="21" y2="8"/>
+        <path d="M12 13.2 L8.5 19 L15.5 19 Z" fill="currentColor" stroke="none"/>
+        <circle cx="3.9" cy="18.1" r="1.8" style="fill:var(--magenta);stroke:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Leverage · the move</p>
+        <p>Coding agents. I let AI do the building and had a working computer-vision app running in a few hours. But the more durable win was the workflow it forced into focus: use the LLM as a thought partner to shape the end experience, then step back and study the domain (its established mental models, the frameworks already rooted there, what's already been shipped). Design the process to deliver the result, then write the PRDs, dispatch to the agents, and carefully merge the pieces into a whole.</p>
+      </div>
+    </div>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/>
+        <circle cx="12" cy="12" r="5.5"/>
+        <circle cx="12" cy="12" r="2.1" style="fill:var(--magenta);stroke:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Unintended consequences · the ripple</p>
+        <p>Fast progress bred dangerous confidence. An hour before the deadline I had a rough (very rough) matcher and, at peak hubris, tore into the pipeline to "improve" it, badly overestimating how well I understood the agent-written code. It blew up. I spent twenty minutes spiraling and walked into the demo with nothing to show.</p>
+      </div>
+    </div>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="4" y1="5" x2="20" y2="5"/>
+        <line x1="12" y1="21" x2="12" y2="9"/>
+        <path d="M8 12.5 L12 8.5 L16 12.5" style="stroke:var(--magenta);fill:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Constraint · the wall</p>
+        <p>The post-mortem was the real prize. The matches were weak because I'd hand-picked the features on assumptions (pose estimation, color analysis), so the model was only ever as good as my guesses. I didn't yet know what a sparse encoder was, or that I was rediscovering the Bitter Lesson. Now I do: stop imposing your priors, and let the system learn the representation straight from the data.</p>
+      </div>
+    </div>
+
+    <a class="visit" href="https://github.com/edgesigma/sceneSprint" target="_blank" rel="noopener">View the code ↗</a>
+  </article>
+
+  <article class="proj" id="slope-fidget">
+    <img loading="lazy" decoding="async" class="face" src="assets/enlightenment_newsprint.webp" alt="">
+    <p class="eyebrow">Slope of Enlightenment</p>
+    <h3 id="fidget-feed-header">Fidget Feed</h3>
+    <p class="hook">App blockers are a crowded but lucrative segment, so this time I took the advice of more successful builders: don't reinvent the wheel, start from a proven segment and a real business model. Fidget Feed swaps the doomscroll for interactive fidgets, and it's the first thing I built to earn, not just to learn.</p>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3.6" y1="18.4" x2="21" y2="8"/>
+        <path d="M12 13.2 L8.5 19 L15.5 19 Z" fill="currentColor" stroke="none"/>
+        <circle cx="3.9" cy="18.1" r="1.8" style="fill:var(--magenta);stroke:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Leverage · the move</p>
+        <p>The unlock was Android Studio plus an agent. The first time I dropped a high-fidelity Figma mock into the chat and it returned a functional UI screen, the game changed. I designed the entire UI in Figma and built it with the agent, only dropping into the code when Copilot got stuck in a bug-fixing loop (a designer's control over the product at an engineer's output).</p>
+      </div>
+    </div>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/>
+        <circle cx="12" cy="12" r="5.5"/>
+        <circle cx="12" cy="12" r="2.1" style="fill:var(--magenta);stroke:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Unintended consequences · the ripple</p>
+        <p>I set out to earn, and instead I mapped the entire action-space of shipping a product. A year of touching every surface that isn't code or design: a landing page and lead capture, three social channels, UGC experiments, exhaustive market research, even a micro-niche I named "fidget-blockers." I now understand the 90% of a product that has nothing to do with building it.</p>
+      </div>
+    </div>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="4" y1="5" x2="20" y2="5"/>
+        <line x1="12" y1="21" x2="12" y2="9"/>
+        <path d="M8 12.5 L12 8.5 L16 12.5" style="stroke:var(--magenta);fill:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Constraint · the wall</p>
+        <p>The one thing I never designed for was the people. Google requires a dozen real humans to run a 14-day closed beta before you can publish, and coordinating twelve specific strangers turned out to be harder than any of the engineering. The build was never the bottleneck; the humans were. That realization is the seed of what came next.</p>
+      </div>
+    </div>
+    <a class="visit" href="https://fidgetfeed.com" target="_blank" rel="noopener">Visit Fidget Feed ↗</a>
+  </article>
+
+  <article class="proj" id="slope">
+    <p class="eyebrow">Slope of Enlightenment</p>
+    <h3 id="RedLine-header">RedLine</h3>
+    <p class="hook">At a time when rideshare drivers in Cleveland were facing often-fatal violence, I was assaulted by a passenger at 2 a.m. on a Friday. It could have been far worse, but what shook me most was the aftermath: the indifference of the local police, and a Lyft safety team that tried to route my very next ride offer back into the same neighborhood. RedLine is the feature Lyft would never ship: drivers filter ride offers by geofencing the areas they want to avoid.</p>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3.6" y1="18.4" x2="21" y2="8"/>
+        <path d="M12 13.2 L8.5 19 L15.5 19 Z" fill="currentColor" stroke="none"/>
+        <circle cx="3.9" cy="18.1" r="1.8" style="fill:var(--magenta);stroke:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Leverage · the move</p>
+        <p>RedLine is free, with no business model, but I built it to reach drivers, and the rideshare subreddits connected me straight to the community it's for. The real leverage was the reason it exists: my earlier projects were fascinations, but RedLine has a mission, and that changed how it landed.</p>
+      </div>
+    </div>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/>
+        <circle cx="12" cy="12" r="5.5"/>
+        <circle cx="12" cy="12" r="2.1" style="fill:var(--magenta);stroke:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Unintended consequences · the ripple</p>
+        <p>The core value is the go/no-go filter, but capturing each pickup and dropoff to check against a driver's geofences quietly produces something the Lyft app never gives drivers: a detailed, personal ride log. I've used mine to win disputes with customer support, and the dataset turns out to be exactly what you'd want to train a ride-scoring classifier. A safety filter became a data product.</p>
+      </div>
+    </div>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="4" y1="5" x2="20" y2="5"/>
+        <line x1="12" y1="21" x2="12" y2="9"/>
+        <path d="M8 12.5 L12 8.5 L16 12.5" style="stroke:var(--magenta);fill:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Constraint · the wall</p>
+        <p>The clever part is also the risky part. RedLine reads the Lyft app's actual UI components through Android's accessibility APIs (far more reliable than OCR-ing pixels), but that same approach makes Play Store approval an open question. The capability and the compliance risk are the same feature.</p>
+      </div>
+    </div>
+    <a class="visit" href="https://getredlineapp.com" target="_blank" rel="noopener">Visit RedLine ↗</a>
+  </article>
+
+  <article class="proj" id="plateau">
+    <img loading="lazy" decoding="async" class="face" src="assets/sustainability_newsprint.webp" alt="">
+    <p class="eyebrow">Plateau of Sustainability</p>
+    <h3 id="NPC-header">NPC</h3>
+    <p class="hook">If you had a programmable network of human actuators, completing any real-world task would be as simple as an API call. That's NPC. I'm exploring what AI does to labor markets when you can dispatch and verify physical work like software. The #BuildWithGemini XPRIZE is the forcing function: real progress, and real distribution.</p>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3.6" y1="18.4" x2="21" y2="8"/>
+        <path d="M12 13.2 L8.5 19 L15.5 19 Z" fill="currentColor" stroke="none"/>
+        <circle cx="3.9" cy="18.1" r="1.8" style="fill:var(--magenta);stroke:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Leverage · the move</p>
+        <p>The move was to stop thinking about software and get out into the world. Less brainstorming, more shipping toward one specific outcome ("upload an image, and a human street team spreads the idea in sticker form across town"), then problem-solve forward, document the effort, publish the video. Each tight cycle has driven the project deeper into real-world specificity.</p>
+      </div>
+    </div>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/>
+        <circle cx="12" cy="12" r="5.5"/>
+        <circle cx="12" cy="12" r="2.1" style="fill:var(--magenta);stroke:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Unintended consequences · the ripple</p>
+        <p>Building forward with AI as a thought partner sharpened the focus from labor to proof. The real hypothesis: the layer where AI verifies the work (that a shelf really is out of stock, that the task really happened) is the product. NPC became less "people doing things" and more a system that produces verified truth about the physical world.</p>
+      </div>
+    </div>
+
+    <div class="lens">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="4" y1="5" x2="20" y2="5"/>
+        <line x1="12" y1="21" x2="12" y2="9"/>
+        <path d="M8 12.5 L12 8.5 L16 12.5" style="stroke:var(--magenta);fill:none"/>
+      </svg>
+      <div>
+        <p class="lbl">Constraint · the frontier</p>
+        <p>The frontier now is customers. That demands specificity, so I'm going deep on retail execution, preparing a paid pilot while hardening the CV pipeline that makes the verification trustworthy. The question stopped being "can I build it" and became "can I make it trustworthy enough to bet a business on."</p>
+      </div>
+    </div>
+    <a class="visit" href="https://npc.guide" target="_blank" rel="noopener">Visit NPC ↗</a>
+  </article>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="ft2" id="contact">
+  <p class="eyebrow">Have a problem worth pointing at?</p>
+  <h2>Let's build something that <span class="em">actually ships.</span><img loading="lazy" decoding="async" class="face-emoji" src="assets/consistency.webp" alt=""></h2>
+  <a class="mail" href="mailto:yell@mauricewingfield.com">yell@mauricewingfield.com</a>
+  <div class="social"><a href="https://www.linkedin.com/in/mauricewingfield/">LinkedIn</a><a href="https://github.com/edgesigma">GitHub</a><a href="https://x.com/noslugg">X</a><a href="Maurice-Wingfield-Resume.pdf" target="_blank" rel="noopener">Résumé</a></div>
+  <img loading="lazy" decoding="async" class="face-payoff" src="assets/consistency.webp" alt="">
+</footer>
+<div class="ftcopy">© 2026 Maurice Wingfield · Cleveland, Ohio</div>
+
+<script>
+  // optional preview toggles: ?bg=RRGGBB recolors the hero field · ?art=full = full-bleed hero
+  var qs=new URLSearchParams(location.search), bg=qs.get('bg');
+  if(bg) document.documentElement.style.setProperty('--hero-bg','#'+bg);
+  if(qs.get('art')==='full'){var hb=document.querySelector('.hero'); if(hb) hb.classList.add('full');}
+  if(qs.get('foot')==='emoji'){document.querySelectorAll('.face-payoff').forEach(function(e){e.style.display='none'});
+                               document.querySelectorAll('.face-emoji').forEach(function(e){e.style.display='inline-block'});}
+  var fb=qs.get('ftbg'); if(fb) document.documentElement.style.setProperty('--footer-bg','#'+fb);
+  if(qs.get('ftlight')){var ft=document.querySelector('.ft2'); if(ft) ft.classList.add('light');}
+  // nav + hero share exactly one viewport height: measure the sticky nav, expose as --nav-h
+  (function(){var nav=document.querySelector('.nav'); if(!nav) return;
+    function setNavH(){document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');}
+    setNavH(); window.addEventListener('resize', setNavH); window.addEventListener('load', setNavH);
+    if(document.fonts && document.fonts.ready){document.fonts.ready.then(setNavH);}})();
+</script>
 </body>
 </html>

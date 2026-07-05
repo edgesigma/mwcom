@@ -49,10 +49,16 @@
   var env = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'development' : 'production';
   posthog.register({ env: env });
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,800;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<!-- Self-hosted subsetted fonts (latin). Hero-critical faces preloaded to kill FOUT. -->
+<link rel="preload" href="assets/webfonts/spectral-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/webfonts/spectral-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/webfonts/source-serif-4-600.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face{font-family:'Source Serif 4';font-style:normal;font-weight:400;font-display:swap;src:url('assets/webfonts/source-serif-4-400.woff2') format('woff2')}
+  @font-face{font-family:'Source Serif 4';font-style:normal;font-weight:600;font-display:swap;src:url('assets/webfonts/source-serif-4-600.woff2') format('woff2')}
+  @font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:swap;src:url('assets/webfonts/spectral-400-italic.woff2') format('woff2')}
+  @font-face{font-family:'Spectral';font-style:normal;font-weight:600;font-display:swap;src:url('assets/webfonts/spectral-600.woff2') format('woff2')}
+  @font-face{font-family:'Spectral';font-style:normal;font-weight:800;font-display:swap;src:url('assets/webfonts/spectral-800.woff2') format('woff2')}
   :root{
     --cream:#F3EAD7; --cream-2:#ECE0C8; --ink:#16120E; --ink-soft:#4A423B;
     --magenta:#FF0078; --magenta-deep:#C8005E; --cyan:#00C1ED; --cyan-deep:#0A6E82;
